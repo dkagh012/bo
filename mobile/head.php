@@ -125,13 +125,13 @@ include_once(G5_LIB_PATH . '/popular.lib.php');
 
     <ul id="profile_list" class="pc_view">
       <?php if ($is_member) { ?>
-        <li id="tnb">
-            <?php echo outlogin("theme/basic"); ?>
-        </li>
         <li id="tnb-arm">
             <?php if ($is_member) { ?>
                 <?php include_once(G5_PATH . '/plugin/srd-pushmsg/pushmsg_view.php'); ?>
             <?php } ?>
+        </li>
+        <li id="tnb">
+            <?php echo outlogin("theme/basic"); ?>
         </li>
       <?php } else { ?>
         <li class="head_login"><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>

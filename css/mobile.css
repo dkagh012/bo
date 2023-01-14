@@ -132,7 +132,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 #tnb {
     position: relative;
     height: 100%;
-    width: 25%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -150,9 +150,6 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     height: 48px;
     width: 48px;
     background: transparent;
-    position: absolute;
-    right: 20px;
-    top: -24px;
 }
 
 #tnb .profile_btn .profile_img img {
@@ -189,11 +186,10 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 #tnb-arm {
     display: inline-block;
     border: 0;
+    padding: 5px;
     height: 48px;
     width: 48px;
     background: transparent;
-    position: absolute;
-    top: 39px;
 }
 
 #tnb .tnb_member {
