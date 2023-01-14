@@ -44,6 +44,7 @@
   display: flex;
   font-weight: 700;
   font-size: 32px;
+  height: 20%;
   line-height: 47px;
 
 /* 컬러 5 */
@@ -101,7 +102,7 @@
   color: #26E2B3;
   padding: 0;
 }
-#tiles>li:nth-child(1) .cont2 {
+#tiles>li:nth-child(1) .cont3 {
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
@@ -115,13 +116,13 @@ line-height: 33px;
 color: #FFFFFF;
 }
 /*  */
-#tiles>li:nth-child(2) .cont2 {
+#tiles>li:nth-child(2) .cont3 {
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
     color: #888888;
 }
-#tiles>li:nth-child(3) .cont2{
+#tiles>li:nth-child(3) .cont3{
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
@@ -195,9 +196,13 @@ li.titles_list {
   border-bottom: 1px solid #eee;
 }
 .cont2 {
+    height: 70%;
+}
+.cont3 {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
+  height: 10%;
   color: #888888;
 }
 
@@ -207,6 +212,8 @@ a.titles_img {
 
 .con_title {
   width: 77%;
+  display: flex;
+  flex-direction: column;
 }
 .content {
   padding-bottom: 47px;
