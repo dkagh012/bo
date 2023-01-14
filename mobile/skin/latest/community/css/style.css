@@ -42,9 +42,8 @@ div.cm-desc {
 
 .cm-responsive {
   float: left;
-  width: 33%;
-  padding-right: 50px;
-  padding-bottom: 60px;
+  width: 31%;
+  margin-bottom: 60px;
 }
 
 .cm-slide_title.cut {
@@ -64,21 +63,31 @@ div.cm-desc {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-
+.cm_background>div:nth-child(2) {margin: 0px 50px 0px 0px;}
+.cm_background>div:nth-child(3) {margin: 0px 50px 0px 0px;}
+.cm_background>div:nth-child(5) {margin: 0px 50px 0px 0px;}
+.cm_background>div:nth-child(6) {margin: 0px 50px 0px 0px;}
+.cm_background>div:nth-child(8) {margin: 0px 50px 0px 0px;}
+.cm_background>div:nth-child(9) {margin: 0px 50px 0px 0px;}
 
 @media all and (max-width:1440px){
   .cm-responsive{
-    padding-right: 15px;
-padding-bottom: 30px;
+    width: 30%;
 }
-div.cm-gallery img {
 
-  height: 250px;
-}
 }
 @media all and (max-width:1024px){
 
-div.cm-gallery img {
-  height: 200px;
+  div.cm-gallery img {
+    height: 200px;
+  }
+  .cm-responsive{
+    width: 29%;
 }
+.cm_background>div:nth-child(2) {margin: 0px 62px 0px 0px;}
+.cm_background>div:nth-child(3) {margin: 0px 62px 0px 0px;}
+.cm_background>div:nth-child(5) {margin: 0px 62px 0px 0px;}
+.cm_background>div:nth-child(6) {margin: 0px 62px 0px 0px;}
+.cm_background>div:nth-child(8) {margin: 0px 62px 0px 0px;}
+.cm_background>div:nth-child(9) {margin: 0px 62px 0px 0px;}
 }

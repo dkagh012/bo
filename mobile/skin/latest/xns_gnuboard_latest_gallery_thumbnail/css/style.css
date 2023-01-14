@@ -42,9 +42,8 @@ div.desc {
 
 .responsive {
   float: left;
-  width: 33%;
-  padding-right: 50px;
-  padding-bottom: 60px;
+  width: 31%;
+  margin-bottom: 60px;
 }
 
 .slide_title.cut {
@@ -66,13 +65,9 @@ div.desc {
 }
 
 @media all and (max-width:1440px){
-  .responsive{
-    padding-right: 15px;
-padding-bottom: 30px;
-}
-div.gallery img {
-  height: 250px;
-}
+  .responsive {
+    width: 30%;
+    }
 }
 
 @media all and (max-width:1024px){
@@ -80,4 +75,16 @@ div.gallery img {
 div.gallery img {
   height: 200px;
 }
+.responsive {
+  width: 29%;
 }
+.xns_background>div:nth-child(2) {margin: 0px 62px 0px 0px;}
+.xns_background>div:nth-child(3) {margin: 0px 62px 0px 0px;}
+.xns_background>div:nth-child(5) {margin: 0px 62px 0px 0px;}
+.xns_background>div:nth-child(6) {margin: 0px 62px 0px 0px;}
+}
+
+.xns_background>div:nth-child(2) {margin: 0px 50px 0px 0px;}
+.xns_background>div:nth-child(3) {margin: 0px 50px 0px 0px;}
+.xns_background>div:nth-child(5) {margin: 0px 50px 0px 0px;}
+.xns_background>div:nth-child(6) {margin: 0px 50px 0px 0px;}
