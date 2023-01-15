@@ -4,7 +4,7 @@
 .lt {position:relative;border-top:2px solid #4a5ba9;}
 .lt .lt_title {color:#4a5ba9;display:block;padding:20px 20px 10px;}
 .lt .cnt_cmt {display:inline-block;margin:0 5px 0 3px;}
-.lt ul {width: 100%;padding:0 20px 10px;list-style:none;display: flex;flex-wrap: wrap;}
+.lt ul {width: 100%;padding:0 20px 10px;list-style:none;display: flex;flex-direction: column;}
 .lt li{border-top: 1px solid #f1f3f6;padding:10px 0}
 .lt li:first-child{border-top:0}
 .lt .lt_info{line-height: 20px;color: #828282;position: relative;margin-top: 5px;vertical-align:top}

@@ -36,7 +36,7 @@ ul{list-style:none;}
 .hd_pops_footer button {margin-right:5px;padding:5px 10px;border:0;background:#393939;color:#fff}
 
 /* 상단 레이아웃 */
-#hd {position:relative;background:#211c32}
+#hd {position:relative;background: #000000;}
 #hd:after {display:block;visibility:hidden;clear:both;content:""}
 #hd_h1 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 .hd_admin{font-weight:bold;display:block;color:#fff;
@@ -46,23 +46,24 @@ padding:10px;text-align:center;background:#ff0000;padding:10px;position:fixed;bo
 box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 #hd_wrapper{
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: black;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 .tnb{display:none;}
-#logo {float:left;width:28%}
-#logo .logo_inner {float:right;width:260px;text-align:left}
+#logo {}
+#logo .logo_inner {float:right;width: 100%;}
 #logo a {display:inline-block}
 #user_open {position:absolute;top:0;right:0;height:50px;width:50px;border:0;background-size:70%;background:none; font-size: 16px;color:#fff}
 #gnb_open {position:absolute;top:0;left:0;height:50px;width:50px;border:0;background-size:70%;background:none; font-size: 16px;color:#fff}
 
 #gnb_empty {padding:20px 0;color:#fff;text-align:center;line-height:2em}
 #gnb_empty a {display:inline;text-decoration:underline}
-#gnb_1dul{width: 50%;}
+#gnb_1dul{width: 54%;}
 #hd_sch {text-align:center;padding:20px}
 #hd_sch h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 #hd_sch form {position:relative;}
@@ -126,13 +127,11 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     #hd_sch #sch_submit {background:none;border-radius:0;width:50px;height:60px}
     #hd_sch .sch_cl_btn{position:absolute;top:0;right:0;width:50px;height:60px;background:none;border:0;color:#817f86;font-size:16px}
     #hd_sch .sch_cl_btn:hover{color:#fff}
-    #logo{width: 20%;font-size: 32px;text-align: center;}
+    #logo{width: 20%;text-align: left;font-size: 32px;}
 
     
 #tnb {
     position: relative;
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -284,7 +283,9 @@ box-shadow: 0 0 5px  rgba(100,100,100,0.2);}
 /* 화면낭독기 사용자용 */
 #hd_login_msg {position:absolute;top:0;left:0;width:0;height:0;overflow:hidden}
 .msg_sound_only, .sound_only {display:inline-block;position:absolute;top:0;left:0;margin:0 !important;padding:0 !important;width:1px !important;height:1px !important;font-size:0 !important;line-height:0 !important;overflow:hidden}
-
+.logo_img {
+    width:242px;
+}
 /* 본문 바로가기 */
 .to_content a {z-index:100000;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 
@@ -340,8 +341,10 @@ a.btn_frmline, button.btn_frmline {display:inline-block;padding:0 5px;;border:0;
 button.btn_frmline {font-size:1em}
 
 .pc_view {
-    display: flex;
+    width: 26%;
     align-items: center;
+    display: flex;
+    justify-content: flex-end;
 }
     .m_view{display:block}
 
@@ -410,10 +413,10 @@ a.btn_admin:focus, a.btn_admin:hover {}
 
 /* 로그인 버튼 */
 .head_login{
-    margin-right:24px;
     background: #1E1E2D;
     border-radius: 4px;
     padding: 13px 27px 13px 27px;
+    margin-right: 24px;
 }
 .head_login>a{
     color:white;
