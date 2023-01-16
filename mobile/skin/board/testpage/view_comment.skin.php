@@ -14,8 +14,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
 <section id="bo_vc">
     <h2>댓글목록</h2>
     <?php
-    $cmt_amt = count($list);
-    for ($i=0; $i<$cmt_amt; $i++) {
+    for ($i=0; $i<count($list); $i++) {
         $comment_id = $list[$i]['wr_id'];
         $cmt_depth = ""; // 댓글단계
         $cmt_depth = strlen($list[$i]['wr_comment_reply']) * 20;

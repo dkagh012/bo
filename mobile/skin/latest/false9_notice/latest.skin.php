@@ -8,7 +8,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 
 		<div class="li01">
 			<div class="li01_1">
-				<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>"><?php echo $bo_subject; ?></a>
+				<a href="<?php echo G5_BBS_URL ?>/board.php?bo_table=<?php echo $bo_table ?>">실시간 급상승</a>
 			</div>
 
 			<div class="li01_txt">
@@ -17,7 +17,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 
 			
   <?php for ($i=0; $i<count($list); $i++) {  ?>
-    <li><a href="<?php echo $list[$i]['href']?>" title="<?php echo $list[$i]['subject']?>">
+    <li class="fa_t"><a href="<?php echo $list[$i]['href']?>" title="<?php echo $list[$i]['subject']?>">
       <?php
       if ($list[$i]['is_notice'])
         echo "<strong>".$list[$i]['subject']."</strong>";

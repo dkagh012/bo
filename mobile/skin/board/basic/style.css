@@ -4,6 +4,10 @@
 
 /* 게시판 버튼 */
 /* 목록 버튼 */
+.latest_background {
+    padding: 0 160px;
+}
+
 #bo_cate {
     border-bottom: 1px solid #d6d9e3;
     ;
@@ -63,8 +67,9 @@
 }
 
 .latest_list {
-    margin: 0 auto;
-    width: 700px;
+    margin: 0px auto;
+    width: 50%;
+    padding: 0 50px;
 }
 
 #bo_cate ul {
@@ -77,6 +82,96 @@
 
 .latest_ca {
     margin: 0 auto;
-    width: 400px;
-    float: left;
+    width: 25%;
+}
+
+#dd {
+    text-align: center;
+}
+
+#dd h2 {
+    position: absolute;
+    font-size: 0;
+    text-indent: -9999em;
+    line-height: 0;
+    overflow: hidden
+}
+
+#dd form {
+    position: relative;
+}
+
+#dd #sch_stx {
+    width: 100%;
+    padding-left: 50px;
+    height: 45px;
+    color: #fff;
+    border: 0;
+    background: #040B11;
+    border-radius: 4px;
+    padding-right: 10px;
+}
+
+#dd #sch_submit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 45px;
+    ;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    background: none;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+#sch_stx::placeholder {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #FFFFFF;
+}
+.latest_best {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.latest_list_form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 50px;
+}
+.ca_lists li{
+    padding: 20px 20px 20px 16px;
+    background: #040B11;
+}
+.id_tit {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+}
+.ca_lists a {
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+/* identical to box height */
+    color: #FFFFFF;
+}
+.ca_ar {
+    width: 20px;
+    height: 20px;
 }

@@ -2,48 +2,6 @@
 if (!defined('_GNUBOARD_'))
     exit; // 개별 페이지 접근 불가
 ?>
-<div id="idx_right">
-
-    <?php 
-    // echo outlogin('theme/basic');
-     // 외부 로그인 ?>
-
-    <?php
-    // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-    // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-    // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-    // echo latest('theme/notice', 'notice', 4, 33);
-    ?>
-
-    <!-- <ul id="hd_nb" class="box">
-        <li class="hd_nb1"><a href="<?php 
-        // echo G5_BBS_URL 
-        ?>/qalist.php" id="snb_qa"><i class="fa fa-comments"
-                    aria-hidden="true"></i>1:1문의</a></li>
-        <li class="hd_nb2"><a href="<?php
-        //  echo G5_BBS_URL 
-         ?>/faq.php" id="snb_faq"><i class="fa fa-question-circle"
-                    aria-hidden="true"></i>FAQ</a></li>
-        <li class="hd_nb3"><a href="<?php 
-        // echo G5_BBS_URL 
-        ?>/current_connect.php" id="snb_cnt"><i class="fa fa-users"
-                    aria-hidden="true"></i>접속자 <span>
-                    <?php 
-                    // echo connect('theme/basic');
-                     // 현재 접속자수 ?>
-                </span></a></li>
-        <li class="hd_nb4"><a href="<?php 
-        // echo G5_BBS_URL 
-        ?>/new.php" id="snb_new"><i class="fa fa-history"
-                    aria-hidden="true"></i>새글</a></li>
-
-    </ul> -->
-
-    <?php 
-    // echo visit('theme/basic'); 
-    // 방문자수 ?>
-</div>
-
 
 
 
