@@ -4,6 +4,16 @@
 
 /* 게시판 버튼 */
 /* 목록 버튼 */
+.bo_latestBackground{
+    padding: 0 160px;
+}
+.bo_latestform{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 50px;
+}
+
 #bo_list a.btn_b01 {}
 #bo_list a.btn_b01:focus, #bo_list .btn_b01:hover {}
 #bo_list a.btn_b02 {}
@@ -319,4 +329,181 @@ box-shadow: 1px 2px 8px #e2e4f1}
 @media (max-width: 969px){
     #bo_w .form_01 {margin:10px}
     .write_div{text-align:right;margin:10px}
+}
+@charset "utf-8";
+
+/* ### 기본 스타일 커스터마이징 시작 ### */
+
+/* 게시판 버튼 */
+/* 목록 버튼 */
+.latest_background {
+    padding: 0 160px;
+}
+
+#bo_cate {
+    border-bottom: 1px solid #d6d9e3;
+    ;
+}
+
+#bo_cate h2 {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden
+}
+
+#bo_cate ul {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar
+}
+
+#bo_cate ul:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    content: ""
+}
+
+#bo_cate ul::-webkit-scrollbar {
+    display: none;
+}
+
+#bo_cate li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+#bo_cate a {
+    color: #555;
+    display: block;
+    line-height: 40px;
+    position: relative
+}
+
+#bo_cate #bo_cate_on {
+    color: #bd00c9;
+    font-weight: bold
+}
+
+#bo_cate #bo_cate_on:before {
+    background: #bd00c9;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px
+}
+
+.latest_list {
+    margin: 0px auto;
+    width: 50%;
+    padding: 0 50px;
+}
+
+#bo_cate ul {
+    background: #fff;
+    padding-left: 1px;
+    border-bottom: 1px solid #d9dce3;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest_ca {
+    margin: 0 auto;
+    width: 25%;
+}
+
+#dd {
+    text-align: center;
+}
+
+#dd h2 {
+    position: absolute;
+    font-size: 0;
+    text-indent: -9999em;
+    line-height: 0;
+    overflow: hidden
+}
+
+#dd form {
+    position: relative;
+}
+
+#dd #sch_stx {
+    width: 100%;
+    padding-left: 50px;
+    height: 45px;
+    color: #fff;
+    border: 0;
+    background: #040B11;
+    border-radius: 4px;
+    padding-right: 10px;
+}
+
+#dd #sch_submit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 45px;
+    ;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    background: none;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+#sch_stx::placeholder {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    
+    
+    color: #FFFFFF;
+}
+.latest_best {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.latest_list_form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 50px;
+}
+.ca_lists li{
+    padding: 20px 20px 20px 16px;
+    background: #040B11;
+}
+.id_tit {
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 30px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+}
+.ca_lists a {
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+/* identical to box height */
+    color: #FFFFFF;
+}
+.ca_ar {
+    width: 20px;
+    height: 20px;
 }
