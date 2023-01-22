@@ -51,7 +51,13 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
               <!-- 이름 -->
               <?php echo $list[$i]['subject'] ?>
 
-
+              <div class="slide_content">
+                <p class="slide_content2">
+                  <a href="<?php echo $list[$i]['href'] ?>">
+                    <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
+                  </a>
+                </p>
+              </div>
             </li>
 
             <li class="slide_date">
