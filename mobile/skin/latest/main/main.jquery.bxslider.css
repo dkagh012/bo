@@ -23,7 +23,7 @@ ul.bxslider {
 }
 .gall_lt li .lt_img img {
   width: 100%;
-  height: 440px;
+  height: 700px;
   object-fit: cover;
   }
 .bx-viewport {
@@ -54,11 +54,12 @@ ul.bxslider {
 /** THEME
 ===================================*/
 .mainImages .bx-wrapper {
-/*   -moz-box-shadow: 0 0 5px #ccc;
+  /*   -moz-box-shadow: 0 0 5px #ccc;
   -webkit-box-shadow: 0 0 5px #ccc;
   box-shadow: 0 0 5px #ac5c5c;
   background: #fff; */
-}
+  height: 100%;
+  }
 .mainImages .bx-wrapper .bx-pager,
 .mainImages .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -203,4 +204,7 @@ ul.bxslider {
   display: block;
   font-size: .85em;
   padding: 10px;
+}
+.mainImages.mainImages_ {
+  height: 700px;
 }
