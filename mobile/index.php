@@ -12,7 +12,7 @@ add_javascript('<script src="'.G5_JS_URL.'/jquery.bxslider.js"></script>', 10);
 
     <!-- 메인화면 최신글 시작 -->
     <?php
-echo latest('theme/main', 'free', 10, 23);
+echo latest('theme/main', 'ani', 10, 23);
     ?>
 
     <!-- 메인화면 최신글 끝 -->

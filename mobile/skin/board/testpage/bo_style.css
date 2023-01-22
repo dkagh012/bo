@@ -6,6 +6,9 @@
 /* 목록 버튼 */
 .bo_latestBackground {
     padding: 0 160px;
+    max-width:1920px;
+    width:100%;
+    margin:0 auto;
 }
 
 .bo_latestform {
