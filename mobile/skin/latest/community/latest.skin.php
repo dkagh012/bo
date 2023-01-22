@@ -43,7 +43,8 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
 
           <ul>
             <li class="cm-slide_title cut">
-
+            <a href="<?php echo $list[$i]['href'] ?>">
+            <div class="cm-slide_title_desc">
               <!-- 카테고리 -->
               [<?php
               if ($list[$i]['ca_name']) {
@@ -52,9 +53,12 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
               ?>]
               <!-- 이름 -->
               <?php echo $list[$i]['subject'] ?>
-
-
-            </li>
+            </div>
+              <div class="slide_content">
+                  <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
+                </div>
+            </a>
+              </li>
 
             <li class="slide_date">
 

@@ -6,24 +6,24 @@
   color:#000; text-decoration:none;
 	-webkit-transition: all .2s ease-in-out;-moz-transition: all .2s ease-in-out;-ms-transition: all .2s ease-in-out;-o-transition: all .2s ease-in-out;transition: all .2s ease-in-out;
 }
-.xns_gnuboard_latest_gallery_thumbnail div.gallery {
+.xns_gnuboard_latest_gallery_thumbnail .gallery {
 	-webkit-transition: all .2s ease-in-out;-moz-transition: all .2s ease-in-out;-ms-transition: all .2s ease-in-out;-o-transition: all .2s ease-in-out;transition: all .2s ease-in-out;
 }
 
-div.gallery {
+.gallery {
   position:relative;
   overflow:hidden;
 }
 
-div.gallery img {
+.gallery img {
   width: 100%;
   height: 350px;
 }
-div.gallery img.thumb {
+.gallery img.thumb {
   position:absolute; top:0px; left:0px; display:inline-block;
 }
 
-div.desc {
+.desc {
   position:relative;
   text-align: left;
   font-weight: 400;
@@ -70,22 +70,22 @@ div.desc {
 
 @media all and (max-width:1024px){
 
-div.gallery img {
+.gallery img {
   height: 200px;
 }
 .responsive {
   width: 29%;
 }
-.xns_background>div:nth-child(2) {margin: 0px 62px 0px 0px;}
-.xns_background>div:nth-child(3) {margin: 0px 62px 0px 0px;}
-.xns_background>div:nth-child(5) {margin: 0px 62px 0px 0px;}
-.xns_background>div:nth-child(6) {margin: 0px 62px 0px 0px;}
+.xns_background>:nth-child(2) {margin: 0px 62px 0px 0px;}
+.xns_background>:nth-child(3) {margin: 0px 62px 0px 0px;}
+.xns_background>:nth-child(5) {margin: 0px 62px 0px 0px;}
+.xns_background>:nth-child(6) {margin: 0px 62px 0px 0px;}
 }
 
-.xns_background>div:nth-child(2) {margin: 0px 50px 0px 0px;}
-.xns_background>div:nth-child(3) {margin: 0px 50px 0px 0px;}
-.xns_background>div:nth-child(5) {margin: 0px 50px 0px 0px;}
-.xns_background>div:nth-child(6) {margin: 0px 50px 0px 0px;}
+.xns_background>:nth-child(2) {margin: 0px 50px 0px 0px;}
+.xns_background>:nth-child(3) {margin: 0px 50px 0px 0px;}
+.xns_background>:nth-child(5) {margin: 0px 50px 0px 0px;}
+.xns_background>:nth-child(6) {margin: 0px 50px 0px 0px;}
 
 .slide_content {
   overflow-wrap: break-word;

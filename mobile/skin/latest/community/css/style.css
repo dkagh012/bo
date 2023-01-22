@@ -91,3 +91,7 @@ div.cm-desc {
 .cm_background>div:nth-child(8) {margin: 0px 62px 0px 0px;}
 .cm_background>div:nth-child(9) {margin: 0px 62px 0px 0px;}
 }
+
+.cm-slide_title_desc {
+  color: #26E2B3;
+}

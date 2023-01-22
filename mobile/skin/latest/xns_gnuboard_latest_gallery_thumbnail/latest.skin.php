@@ -44,13 +44,13 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
               <a href="<?php echo $list[$i]['href'] ?>">
                 <!-- 카테고리 -->
                 <div class=slide_title_desc>
-                [<?php
-                if ($list[$i]['ca_name']) {
-                  echo $list[$i]['ca_name'];
-                }
-                ?>]
-                <!-- 이름 -->
-                <?php echo $list[$i]['subject'] ?>
+                  [<?php
+                  if ($list[$i]['ca_name']) {
+                    echo $list[$i]['ca_name'];
+                  }
+                  ?>]
+                  <!-- 이름 -->
+                  <?php echo $list[$i]['subject'] ?>
                 </div>
                 <div class="slide_content">
                   <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
