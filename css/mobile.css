@@ -490,14 +490,14 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
 /* 페이징 */
 .pg_wrap {clear:both;margin:15px 0;text-align:center}
 .pg {display:inline-block}
-.pg_page, .pg_current {display:inline-block;padding:0 10px;height:30px;color:#000;line-height:28px;vertical-align:middle}
+.pg_page, .pg_current {display:inline-block;padding:0 10px;height:30px;color:#424B5A;line-height:28px;vertical-align:middle}
 .pg a:focus, .pg a:hover {text-decoration:none}
 .pg_page {border-radius:3px}
 .pg_start {background:url(../img/btn_first.gif) no-repeat 50% 50% ;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
 .pg_prev {background:url(../img/btn_prev.gif) no-repeat 50% 50% ;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
 .pg_next {background:url(../img/btn_next.gif) no-repeat 50% 50% ;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
 .pg_end {background:url(../img/btn_end.gif) no-repeat 50% 50% ;width:30px;height:30px ;text-indent:-999px;overflow:hidden}
-.pg_current {display:inline-block;background:#4a5ba9;color:#fff;font-weight:normal;border-radius:33px;line-height:30px;}
+.pg_current {display:inline-block;background:#424B5A;color:#fff;font-weight:normal;border-radius:33px;line-height:30px;}
 
 @media all and (max-width:1440px){
     #logo {

@@ -43,9 +43,9 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 
 
 
-			<?php
-				echo latest('theme/photo_basic', 'ani', 3, 23);
-    ?>
+		<?php
+		echo latest('theme/photo_basic', 'ani', 3, 23);
+		?>
 
 
 		<div id="photo_type">
@@ -76,16 +76,10 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 						<div class="con_title">
 							<div class="con">
 								<?php if ($is_category && $list[$i]['ca_name']) { ?>
-									<p class="bo_cate_link">[<?php echo $list[$i]['ca_name'] ?>]</p>
+									<p class="bo_cate_link">[<?php echo $list[$i]['ca_name'] ?>]
+									</p>
 								<?php } ?>
 								<p class="subject">
-									<?php
-									if ($list[$i]['icon_new'])
-										echo "<i class=\"xi-new xi-x\"></i><span class=\"sound_only\">새글</span>";
-									if (isset($list[$i]['icon_hot']))
-										echo rtrim($list[$i]['icon_hot']);
-									//if (isset($list[$i]['icon_secret'])) echo rtrim($list[$i]['icon_secret']);
-									?>
 									<?php echo $list[$i]['subject'] ?>
 							</div>
 
@@ -103,8 +97,8 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 
 						</div>
 						<!--<a href="<?php echo $list[$i]['href'] ?>" class="btn_detail">
-						<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
-					</a>-->
+							<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
+						</a>-->
 
 
 
@@ -122,12 +116,15 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 				<?php if ($list_href || $write_href) { ?>
 					<ul class="btn_bo_user">
 						<?php if ($admin_href) { ?>
-							<li><a href="<?php echo $admin_href ?>" class="btn btn_admin" title="관리자">관리자</a></li>
+							<!-- <li><a href="<?php echo $admin_href ?>" class="btn btn_admin" title="관리자">관리자</a></li> -->
 						<?php } ?>
-						<?php if ($rss_href) { ?><li><a href="<?php echo $rss_href ?>" target="_blank" class="btn btn_rss"
-									title="RSS">RSS</a></li>
-						<?php } ?>
-						<?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn btn_act" title="글쓰기">글쓰기</a></li>
+						<?php if ($member['mb_level']==10) { ?>
+							<?php if ($write_href) { ?>
+								<li>
+									<a href="<?php echo $write_href ?>" class="btn btn_act" title="글쓰기">
+									<i class="xi-pen-o xi-1x"></i></a>
+								</li>
+							<?php } ?>
 						<?php } ?>
 					</ul>
 				<?php } ?>
@@ -144,22 +141,6 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 				<input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
 				<input type="hidden" name="sca" value="<?php echo $sca ?>">
 				<input type="hidden" name="sop" value="and">
-
-				<div class="sch_select">
-					<label for="sfl">제목</label>
-					<select name="sfl" id="sfl">
-						<?php echo get_board_sfl_select_options($sfl); ?>
-					</select>
-				</div>
-
-				<label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-				<div class="sch_bar">
-					<input type="text" name="stx" value="<?php echo stripslashes($stx) ?>" required id="stx" class="sch_input"
-						maxlength="20" placeholder=" 검색어를 입력해주세요">
-					<button type="submit" value="검색" class="sch_btn"><i class="xi-search xi-x"></i><span
-							class="sound_only">검색</span></button>
-				</div>
-			</form>
 		</fieldset>
 	</div>
 
@@ -218,79 +199,79 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 	});
 
 
-<?php if ($is_checkbox) { ?>
-			function all_checked(sw) {
-				var f = document.fboardlist;
+	<?php if ($is_checkbox) { ?>
+		function all_checked(sw) {
+			var f = document.fboardlist;
 
-				for (var i = 0; i < f.length; i++) {
-					if (f.elements[i].name == "chk_wr_id[]")
-						f.elements[i].checked = sw;
-				}
+			for (var i = 0; i < f.length; i++) {
+				if (f.elements[i].name == "chk_wr_id[]")
+					f.elements[i].checked = sw;
+			}
+		}
+
+		function fboardlist_submit(f) {
+			var chk_count = 0;
+
+			for (var i = 0; i < f.length; i++) {
+				if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked)
+					chk_count++;
 			}
 
-			function fboardlist_submit(f) {
-				var chk_count = 0;
+			if (!chk_count) {
+				alert(document.pressed + "할 게시물을 하나 이상 선택하세요.");
+				return false;
+			}
 
-				for (var i = 0; i < f.length; i++) {
-					if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked)
-						chk_count++;
-				}
+			if (document.pressed == "선택복사") {
+				select_copy("copy");
+				return;
+			}
 
-				if (!chk_count) {
-					alert(document.pressed + "할 게시물을 하나 이상 선택하세요.");
+			if (document.pressed == "선택이동") {
+				select_copy("move");
+				return;
+			}
+
+			if (document.pressed == "선택삭제") {
+				if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다."))
 					return false;
-				}
 
-				if (document.pressed == "선택복사") {
-					select_copy("copy");
-					return;
-				}
-
-				if (document.pressed == "선택이동") {
-					select_copy("move");
-					return;
-				}
-
-				if (document.pressed == "선택삭제") {
-					if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다."))
-						return false;
-
-					f.removeAttribute("target");
-					f.action = g5_bbs_url + "/board_list_update.php";
-				}
-
-				return true;
+				f.removeAttribute("target");
+				f.action = g5_bbs_url + "/board_list_update.php";
 			}
 
-			// 선택한 게시물 복사 및 이동
-			function select_copy(sw) {
-				var f = document.fboardlist;
+			return true;
+		}
 
-				if (sw == "copy")
-					str = "복사";
-				else
-					str = "이동";
+		// 선택한 게시물 복사 및 이동
+		function select_copy(sw) {
+			var f = document.fboardlist;
 
-				var sub_win = window.open("", "move", "left=50, top=50, width=500, height=550, scrollbars=1");
+			if (sw == "copy")
+				str = "복사";
+			else
+				str = "이동";
 
-				f.sw.value = sw;
-				f.target = "move";
-				f.action = g5_bbs_url + "/move.php";
-				f.submit();
-			}
+			var sub_win = window.open("", "move", "left=50, top=50, width=500, height=550, scrollbars=1");
 
-			// 게시판 리스트 관리자 옵션
-			jQuery(function ($) {
-				$(".btn_more_opt.is_list_btn").on("click", function (e) {
-					e.stopPropagation();
-					$(".more_opt.is_list_btn").toggle();
-				});
-				$(document).on("click", function (e) {
-					if (!$(e.target).closest('.is_list_btn').length) {
-						$(".more_opt.is_list_btn").hide();
-					}
-				});
+			f.sw.value = sw;
+			f.target = "move";
+			f.action = g5_bbs_url + "/move.php";
+			f.submit();
+		}
+
+		// 게시판 리스트 관리자 옵션
+		jQuery(function ($) {
+			$(".btn_more_opt.is_list_btn").on("click", function (e) {
+				e.stopPropagation();
+				$(".more_opt.is_list_btn").toggle();
 			});
+			$(document).on("click", function (e) {
+				if (!$(e.target).closest('.is_list_btn').length) {
+					$(".more_opt.is_list_btn").hide();
+				}
+			});
+		});
 <?php } ?>
 </script>
 <!-- } 게시판 목록 끝 -->

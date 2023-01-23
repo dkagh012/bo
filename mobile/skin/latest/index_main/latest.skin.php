@@ -34,8 +34,7 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
         <a href="<?php echo $list[$i]['href'] ?>" class="lt_img">
           <?php echo $img_content; ?>
         </a>
-
-
+      <div class="lt_desc">
         <div class="lt_name">
           <?php
 
@@ -50,8 +49,6 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
         <div class="lt_content">
           <?php echo get_text(cut_str(strip_tags($list[$i]['wr_content']), 300)); ?>
         </div>
-        <div class="lt_count">
-
         </div>
 
       </li>
