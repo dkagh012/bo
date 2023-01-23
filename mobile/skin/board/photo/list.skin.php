@@ -43,7 +43,9 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 
 
 
-
+			<?php
+				echo latest('theme/photo_basic', 'ani', 3, 23);
+    ?>
 
 
 		<div id="photo_type">
@@ -52,10 +54,7 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 			</h2>
 
 			<ul id="tiles">
-				<?php for ($i = 0; $i < count($list); $i++) { ?>
-					<?php 
-					// var_dump($i)
-					?>
+				<?php for ($i = 3; $i < count($list); $i++) { ?>
 					<li class="titles_list">
 						<a class="titles_img" href="<?php echo $list[$i]['href'] ?>">
 							<?php

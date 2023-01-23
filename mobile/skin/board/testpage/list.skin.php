@@ -31,7 +31,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                         <input type="hidden" name="sop" value="and">
                         <input type="text" name="stx" id="sch_stx" placeholder="검색어(필수)" required maxlength="20">
                         <button type="submit" value="검색" id="sch_submit">
-                        <i class="xi-search xi-1x"></i>
+                            <i class="xi-search xi-1x"></i>
                             <span class="sound_only">검색</span></button>
                     </form>
 
@@ -87,8 +87,8 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
         </div>
 
         <div class="latest_list">
-            <?php echo latest("theme/false9_notice", 'ani', 5, 30); ?>
-            <?php echo latest_basic("theme/basic", "ani", 5, 50, "", "", "70", "wr_hit"); ?>
+            <?php echo latest("theme/testpage_notice", 'ani', 5, 30); ?>
+            <?php echo latest_basic("theme/testpage_basic", "ani", 5, 50, "", "", "70", "wr_hit"); ?>
 
             <div id="bo_list">
                 <div class="board_wr">
@@ -128,12 +128,14 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
 
 
                         <div class="bo_ul">
-                        <div class="bo_hit_box">
-      <a href="<?php echo get_pretty_url($bo_table); ?>" class="bo_title"><strong>새글피드</strong></a>
-      <a href="<?php echo get_pretty_url($bo_table); ?>" class="bo_more"><span class="sound_only">
-          <?php echo $bo_subject ?>
-        </span>전체보기</a>
-    </div>
+                            <div class="bo_hit_box">
+                                <a href="<?php echo get_pretty_url($bo_table); ?>"
+                                    class="bo_title"><strong>새글피드</strong></a>
+                                <a href="<?php echo get_pretty_url($bo_table); ?>" class="bo_more"><span
+                                        class="sound_only">
+                                        <?php echo $bo_subject ?>
+                                    </span>전체보기</a>
+                            </div>
 
                             <ul class="<?php if ($is_checkbox) { ?>bo_ul_admin<?php } ?>">
                                 <?php
@@ -187,8 +189,8 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                                                     <?php if ($list[$i]['comment_cnt']) { ?>
                                                         <span class="sound_only">댓글</span><i class="xi-bell-o xi-1x"
                                                             aria-hidden="true"></i>
-                                                        <?php echo $list[$i]['comment_cnt']; ?><span
-                                                            class="sound_only">개</span><?php } ?>
+                                                        <?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span>
+                                                    <?php } ?>
                                                     <span class="bo_view"><i class="xi-eye-o xi-1x" aria-hidden="true"></i>
                                                         <?php echo $list[$i]['wr_hit'] ?>
                                                     </span>
@@ -213,12 +215,11 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
             </div>
         </div>
         <div class="latest_best">
-        <?php if ($is_member) { ?>    
-            <a href="http://127.0.0.1/bbs/board.php?bo_table=qowjdxo&level_ck=y&sop=and&sfl=mb_id&stx={$member['mb_id']}"class="latest_list_link">내 프로필로 이동</a>
+            <?php if ($is_member) { ?>
+                <a href="http://127.0.0.1/bbs/board.php?bo_table=qowjdxo&level_ck=y&sop=and&sfl=mb_id&stx={$member['mb_id']}"
+                    class="latest_list_link">내 프로필로 이동</a>
             <?php } ?>
-            
-            <?php
-            echo latest_basic("theme/dt", "ani", 5, 50, "", "", "7", "wr_hit"); ?>
+
         </div>
     </div>
 </div>
