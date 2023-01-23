@@ -53,6 +53,9 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 
 			<ul id="tiles">
 				<?php for ($i = 0; $i < count($list); $i++) { ?>
+					<?php 
+					// var_dump($i)
+					?>
 					<li class="titles_list">
 						<a class="titles_img" href="<?php echo $list[$i]['href'] ?>">
 							<?php
@@ -70,19 +73,7 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 							echo $img_content;
 							?>
 						</a>
-					<?
-			/////////////////////////////////리스트에서 파일 다운로드////////////////////////////////////////
-					$list_pdf_file = get_file($bo_table, $list[$i]['wr_id']);
 
-					for($img_count_num=0;$img_count_num<$list_pdf_file['count'];$img_count_num++){	
-						$img_ex = explode(".", $list_pdf_file[$img_count_num]['file']);
-
-						if($img_ex[1]=='pdf'){
-							echo "<a href=".$list_pdf_file[$img_count_num]['href'].">".$list_pdf_file[$img_count_num]['source']."</a>";
-						}
-					}
-			/////////////////////////////////리스트에서 파일 다운로드 끝////////////////////////////////////////
-			?>
 						<div class="con_title">
 							<div class="con">
 								<?php if ($is_category && $list[$i]['ca_name']) { ?>

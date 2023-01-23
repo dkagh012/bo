@@ -185,14 +185,14 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                                                 </div>
                                                 <div class="bo_comment">
                                                     <?php if ($list[$i]['comment_cnt']) { ?>
-                                                        <span class="sound_only">댓글</span><i class="fa fa-commenting-o"
+                                                        <span class="sound_only">댓글</span><i class="xi-bell-o xi-1x"
                                                             aria-hidden="true"></i>
                                                         <?php echo $list[$i]['comment_cnt']; ?><span
                                                             class="sound_only">개</span><?php } ?>
-                                                    <span class="bo_view"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                    <span class="bo_view"><i class="xi-eye-o xi-1x" aria-hidden="true"></i>
                                                         <?php echo $list[$i]['wr_hit'] ?>
                                                     </span>
-                                                    <span class="bo_date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                    <span class="bo_date"><i class="xi-time-o x1-1x" aria-hidden="true"></i>
                                                         <?php echo $list[$i]['datetime'] ?>
                                                     </span>
                                                 </div>
@@ -213,6 +213,10 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
             </div>
         </div>
         <div class="latest_best">
+        <?php if ($is_member) { ?>    
+            <a href="http://127.0.0.1/bbs/board.php?bo_table=qowjdxo&level_ck=y&sop=and&sfl=mb_id&stx={$member['mb_id']}"class="latest_list_link">내 프로필로 이동</a>
+            <?php } ?>
+            
             <?php
             echo latest_basic("theme/dt", "ani", 5, 50, "", "", "7", "wr_hit"); ?>
         </div>

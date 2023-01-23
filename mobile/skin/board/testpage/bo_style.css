@@ -1599,6 +1599,8 @@
 .latest_best {
     width: 25%;
     margin: 0 auto;
+    display:flex;
+    flex-direction: column;
 }
 
 .latest_list_form {
@@ -1692,4 +1694,12 @@
 .bo_more{
     color: #26E2B3;
     border-bottom: 1px solid;
+}
+.latest_best .latest_list_link {
+    padding: 16.5px 0;
+    color: white;
+    text-align: center;
+    background: #040B11;
+    border-radius: 4px;
+    margin-bottom: 66px;
 }
