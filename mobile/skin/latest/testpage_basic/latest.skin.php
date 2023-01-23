@@ -55,13 +55,13 @@ $thumb_height = 350;
 
 
 
-              <span class="lt_info_view"><i class="fa fa-eye" aria-hidden="true"></i>
+              <span class="lt_info_view"><i class="xi-eye-o xi-1x" aria-hidden="true"></i>
                 <?php echo $list[$i]['wr_hit'] ?>
               </span>
               <?php if ($list[$i]['comment_cnt']) { ?>
                 <span class="sound_only">댓글</span><i class="fa fa-commenting-o" aria-hidden="true"></i>
                 <?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?>
-              <span class="lt_info_date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+              <span class="lt_info_date"><i class="xi-time-o x1-1x" aria-hidden="true"></i>
                 <?php echo $list[$i]['datetime'] ?>
               </span>
 

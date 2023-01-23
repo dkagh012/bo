@@ -34,22 +34,28 @@ $list_count = (is_array($list) && $list) ? count($list) : 0;
         <a href="<?php echo $list[$i]['href'] ?>" class="lt_img">
           <?php echo $img_content; ?>
         </a>
-      <div class="lt_desc">
-        <div class="lt_name">
-          <?php
+        <a href="<?php echo $list[$i]['href'] ?>">
+          <div class="lt_desc">
+            <div class="lt_name">
+              <?php
 
-          echo "<p href=\"" . $list[$i]['href'] . "\">";
-          if ($list[$i]['is_notice'])
-            echo "<strong>" . $list[$i]['subject'] . "</strong>";
-          else
-            echo $list[$i]['subject'];
-          echo "</p>";
-          ?>
-        </div>
-        <div class="lt_content">
-          <?php echo get_text(cut_str(strip_tags($list[$i]['wr_content']), 300)); ?>
-        </div>
-        </div>
+              echo "<p href=\"" . $list[$i]['href'] . "\">";
+              if ($list[$i]['is_notice'])
+                echo "<strong>" . $list[$i]['subject'] . "</strong>";
+              else
+                echo $list[$i]['subject'];
+              echo "</p>";
+              ?>
+            </div>
+            <div class="lt_content">
+              <?php echo get_text(cut_str(strip_tags($list[$i]['wr_content']), 300)); ?>
+            </div>
+            <div class="lt_page_link">
+              <p>자세히보기</p>
+              <i class="xi-arrow-right"></i>
+            </div>
+          </div>
+        </a>
 
       </li>
 

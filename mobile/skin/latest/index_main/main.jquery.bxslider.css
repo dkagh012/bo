@@ -32,9 +32,6 @@ ul.bxslider {
 }
 .lt_name{
   display:block;
-  position: absolute;
-  left: 8%;
-  bottom: 29%;
   font-weight: 700;
   color: #FFFFFF;
   font-family: 'Montserrat';
@@ -42,14 +39,18 @@ ul.bxslider {
   font-size: 32px;
 }
 .lt_content{
-  display:block;
-  position: absolute;
-  left: 8%;
-  bottom: 22%;
   color: #FFFFFF;
   font-family: 'Montserrat';
   font-style: normal;
   font-size: 18px;
+  width: 800px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-top: 16px;
 }
 /** THEME
 ===================================*/
@@ -207,4 +208,19 @@ ul.bxslider {
 }
 .mainImages.mainImages_ {
   height: 700px;
+}
+.lt_desc {
+    position: absolute;
+    bottom: 134px;
+    left:160px;
+}
+.lt_page_link {
+  font-size: 16px;
+  padding-top: 32px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.lt_page_link p{
+  margin-right: 8px;
 }
