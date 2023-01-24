@@ -63,7 +63,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
 #gnb_empty {padding:20px 0;color:#fff;text-align:center;line-height:2em}
 #gnb_empty a {display:inline;text-decoration:underline}
-#gnb_1dul{width: 50%;display: flex;}
+#gnb_1dul{width: 60%;display: flex;}
 #hd_sch {text-align:center;padding:20px}
 #hd_sch h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 #hd_sch form {position:relative;}
@@ -117,16 +117,9 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
     .home:hover::before {
       content: "홈";
-      padding: 0;
-      line-height: 100px;
       color: #26E2B3;;
-      height: auto;
-      overflow: hidden;
       font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .home:hover a{
-        display: none;
+
     }
 
     
@@ -203,7 +196,8 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
         display: none;
     }
     a.gnb_1da:hover {
-        font-size: 0px;
+    font-size: 0;
+    height: 100px;
     }
     
     
@@ -211,9 +205,9 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
 
 /* .gnb_1dli:hover a{color:#fff;} */
-    .gnb_1dli:after {display:block;visibility:hidden;clear:both;content:""}
+    /* .gnb_1dli:after {display:block;visibility:hidden;clear:both;content:""} */
     .gnb_1dli button{float:left;border:0;width:20px;height:60px;overflow:hidden;border:0;background:url(../img/mobile/gnb_bg2.png) no-repeat 50% 50%;background-size:10px ;text-indent:-9999px}
-    .gnb_1da {padding:0;line-height:100px;color: white;height:100%;overflow:hidden;font-size: 1.2rem;font-weight:bold; display:block;}
+    .gnb_1da {padding:0;line-height:100px;color: white;height:100%;overflow:hidden;font-size: 18px;font-weight:bold; display:block;}
     .gnb_2dul {display:none;position:absolute;top:60px;left:0;background:#4a5ba9;min-width:100%;z-index:99}
 
 
@@ -284,7 +278,6 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     display: inline-block;
     border: 0;
     padding: 5px;
-    height: 48px;
     width: 48px;
     background: transparent;
 }
