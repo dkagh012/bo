@@ -112,13 +112,108 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     .gnb_wr{max-width:1200px;padding-right:200px;margin:0 auto;position:relative;}
     #gnb a {display:block}
     .gnb_1dli{position:relative;float:left;line-height: 40px;padding: 3px 20px;}
+    /* 상단 메뉴 hover */
+
+
+    /* .home:hover::before {
+      content: "홈";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .home:hover a{
+        display: none;
+    }
+
+    
+    .art:hover::before {
+      content: "팬아트";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .art:hover a{
+        display: none;
+    }
+
+    .news:hover::before {
+      content: "소식";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .news:hover a{
+        display: none;
+    }
+
+
+    .free:hover::before {
+      content: "커뮤니티";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .free:hover a{
+        display: none;
+    }
+    
+
+    .about:hover::before {
+      content: "비츄얼모에";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .about:hover a{
+        display: none;
+    }
+    
+
+    .contact:hover::before {
+      content: "연락하기";
+      padding: 0;
+      line-height: 100px;
+      color: #26E2B3;
+      height: auto;
+      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .contact:hover a{
+        display: none;
+    }
+     */
+
+
+
+.gnb_1dli:hover a{color:#fff;}
     .gnb_1dli:after {display:block;visibility:hidden;clear:both;content:""}
     .gnb_1dli button{float:left;border:0;width:20px;height:60px;overflow:hidden;border:0;background:url(../img/mobile/gnb_bg2.png) no-repeat 50% 50%;background-size:10px ;text-indent:-9999px}
     .gnb_1da {padding:0;line-height:100px;color: white;height:auto;overflow:hidden;font-size: 1.2rem;font-weight:bold}
     .gnb_2dul {display:none;position:absolute;top:60px;left:0;background:#4a5ba9;min-width:100%;z-index:99}
     .gnb_1dli:hover .gnb_2dul {display:block}
     .gnb_1dli:hover{background:#4a5ba9;font-weight:bold}
-    .gnb_1dli:hover a{color:#fff;}
+
     .gnb_2da {color:#a8a6b0;padding:0 15px;font-weight:normal}
     .gnb_2da:hover{background:#3d50a4}
     

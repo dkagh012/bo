@@ -47,13 +47,22 @@ include_once(G5_LIB_PATH . '/popular.lib.php');
         ?>
 
         <?php if ($row['me_name'] == "COMMUNITY") { ?>
-          <li class="gnb_1dli <?php echo $_GET["bo_table"] == "free" ? "menu_color" : "free gnb_1dlie"; ?>">
+          <li class="gnb_1dli <?php echo $_GET["bo_table"] == "free" ? "menu_color free" : "gnb_1dlie free"; ?>">
           
           <?php } else if ($row['me_name'] == "NEWS") { ?>
-            <li class="gnb_1dli <?php echo $_GET["bo_table"] == "notice" ? "menu_color" : "notice gnb_1dlie"; ?>">
+            <li class="gnb_1dli <?php echo $_GET["bo_table"] == "notice" ? "menu_color news" : "gnb_1dlie news"; ?>">
 
-          <?php } else if ($row['me_name'] == "홈") { ?>
-              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "" ? "menu_color" : "home"; ?>">
+            <?php } else if ($row['me_name'] == "HOME") { ?>
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "" ? "menu_color home" : "gnb_1dlie home"; ?>">
+
+              <?php } else if ($row['me_name'] == "ABOUT US") { ?>
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color about" : "gnb_1dlie about"; ?>">
+
+              <?php } else if ($row['me_name'] == "CONTACT US") { ?>
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color contact" : "gnb_1dlie contact"; ?>">
+
+              <?php } else if ($row['me_name'] == "ART") { ?>
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color art" : "gnb_1dlie art"; ?>">
 
           <?php } else if ($row['me_name'] == "ANI") { ?>
                 <li class="gnb_1dli <?php if ($_GET["bo_table"] == "ani" && $_GET["sca"] == "애니") {
