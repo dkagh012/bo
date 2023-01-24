@@ -150,8 +150,8 @@ ul.bxslider {
 .mainImages .bx-wrapper .bx-controls-auto .bx-stop {
   display: block;
   text-indent: -9999px;
-  width: 22px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   outline: 0;
   background: url('images/stop.png');
 }
