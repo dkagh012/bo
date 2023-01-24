@@ -52,7 +52,7 @@ include_once(G5_LIB_PATH . '/popular.lib.php');
           <?php } else if ($row['me_name'] == "NEWS") { ?>
             <li class="gnb_1dli <?php echo $_GET["bo_table"] == "notice" ? "menu_color" : "notice gnb_1dlie"; ?>">
 
-          <?php } else if ($row['me_name'] == "HOME") { ?>
+          <?php } else if ($row['me_name'] == "홈") { ?>
               <li class="gnb_1dli <?php echo $_GET["bo_table"] == "" ? "menu_color" : "home"; ?>">
 
           <?php } else if ($row['me_name'] == "ANI") { ?>
