@@ -1497,8 +1497,8 @@
     padding: 0 10px;
     color: #fff;
     display: flex;
+    width: 100%;
     align-items: center;
-    justify-content: space-between;
 }
 
 #bo_cate a {
@@ -1506,7 +1506,11 @@
     display: block;
     line-height: 40px;
     font-weight: 100;
-    position: relative
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #bo_cate #bo_cate_on {
@@ -1535,6 +1539,7 @@
     padding-left: 1px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .latest_ca {

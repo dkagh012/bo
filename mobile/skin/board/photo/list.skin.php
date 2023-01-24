@@ -168,35 +168,7 @@ add_stylesheet('<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css"
 
 
 <script>
-	jQuery(function ($) {
-		/* wookmark */
-		$('#tiles').imagesLoaded(function () {
-			var options = {
-				itemWidth: 260,
-				autoResize: true,
-				container: $('#tiles'),
-				offset: 20, //
-				outerOffset: 0,
-				flexibleWidth: '50%'
-			};
 
-			var handler = $('#tiles li');
-			var $window = $(window);
-
-			$window.resize(function () {
-				var windowWidth = $window.width(),
-					newOptions = { flexibleWidth: '50%' };
-
-				if (windowWidth < 1024) {
-					newOptions.flexibleWidth = '100%';
-				}
-
-				handler.wookmark(newOptions);
-			});
-
-			handler.wookmark(options);
-		});
-	});
 
 
 	<?php if ($is_checkbox) { ?>

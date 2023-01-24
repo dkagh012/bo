@@ -20,7 +20,12 @@ div.cm-gallery img {
   height: 350px;
 }
 div.cm-gallery img.thumb {
-  position:absolute; top:0px; left:0px; display:inline-block;
+  position:absolute;
+  top:0px;
+  left:0px;
+  border-radius: 4px;
+  display:inline-block;
+  object-fit: cover;
 }
 
 div.cm-desc {
