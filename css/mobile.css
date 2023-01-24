@@ -63,7 +63,7 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
 #gnb_empty {padding:20px 0;color:#fff;text-align:center;line-height:2em}
 #gnb_empty a {display:inline;text-decoration:underline}
-#gnb_1dul{width: 54%;}
+#gnb_1dul{width: 50%;display: flex;}
 #hd_sch {text-align:center;padding:20px}
 #hd_sch h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 #hd_sch form {position:relative;}
@@ -111,11 +111,11 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     #gnb:after {display:block;visibility:hidden;clear:both;content:""}
     .gnb_wr{max-width:1200px;padding-right:200px;margin:0 auto;position:relative;}
     #gnb a {display:block}
-    .gnb_1dli{position:relative;float:left;line-height: 40px;padding: 3px 20px;}
+    .gnb_1dli{position:relative;line-height: 40px;width: 100%;text-align: center;}
     /* 상단 메뉴 hover */
 
 
-    /* .home:hover::before {
+    .home:hover::before {
       content: "홈";
       padding: 0;
       line-height: 100px;
@@ -202,17 +202,20 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     .contact:hover a{
         display: none;
     }
-     */
+    a.gnb_1da:hover {
+        font-size: 0px;
+    }
+    
+    
 
 
 
-.gnb_1dli:hover a{color:#fff;}
+/* .gnb_1dli:hover a{color:#fff;} */
     .gnb_1dli:after {display:block;visibility:hidden;clear:both;content:""}
     .gnb_1dli button{float:left;border:0;width:20px;height:60px;overflow:hidden;border:0;background:url(../img/mobile/gnb_bg2.png) no-repeat 50% 50%;background-size:10px ;text-indent:-9999px}
-    .gnb_1da {padding:0;line-height:100px;color: white;height:auto;overflow:hidden;font-size: 1.2rem;font-weight:bold}
+    .gnb_1da {padding:0;line-height:100px;color: white;height:100%;overflow:hidden;font-size: 1.2rem;font-weight:bold; display:block;}
     .gnb_2dul {display:none;position:absolute;top:60px;left:0;background:#4a5ba9;min-width:100%;z-index:99}
-    .gnb_1dli:hover .gnb_2dul {display:block}
-    .gnb_1dli:hover{background:#4a5ba9;font-weight:bold}
+
 
     .gnb_2da {color:#a8a6b0;padding:0 15px;font-weight:normal}
     .gnb_2da:hover{background:#3d50a4}
@@ -436,7 +439,7 @@ a.btn_frmline, button.btn_frmline {display:inline-block;padding:0 5px;;border:0;
 button.btn_frmline {font-size:1em}
 
 .pc_view {
-    width: 26%;
+    width: 30%;
     align-items: center;
     display: flex;
     justify-content: flex-end;

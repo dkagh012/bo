@@ -47,22 +47,35 @@ include_once(G5_LIB_PATH . '/popular.lib.php');
         ?>
 
         <?php if ($row['me_name'] == "COMMUNITY") { ?>
-          <li class="gnb_1dli <?php echo $_GET["bo_table"] == "free" ? "menu_color free" : "gnb_1dlie free"; ?>">
-          
+          <li class="gnb_1dli <?php echo $_GET["bo_table"] == "free" ? "menu_color " : "gnb_1dlie "; ?>">
+          <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da free">
+            <?php echo $row['me_name'] ?>
+          </a>
           <?php } else if ($row['me_name'] == "NEWS") { ?>
-            <li class="gnb_1dli <?php echo $_GET["bo_table"] == "notice" ? "menu_color news" : "gnb_1dlie news"; ?>">
-
+            <li class="gnb_1dli <?php echo $_GET["bo_table"] == "notice" ? "menu_color " : "gnb_1dlie "; ?>">
+            <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da news">
+            <?php echo $row['me_name'] ?>
+          </a>
             <?php } else if ($row['me_name'] == "HOME") { ?>
-              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "" ? "menu_color home" : "gnb_1dlie home"; ?>">
-
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "" ? "menu_color " : "gnb_1dlie "; ?>">
+              <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da home">
+            <?php echo $row['me_name'] ?>
+          </a>
               <?php } else if ($row['me_name'] == "ABOUT US") { ?>
-              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color about" : "gnb_1dlie about"; ?>">
-
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color " : "gnb_1dlie "; ?>">
+              <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da about">
+            <?php echo $row['me_name'] ?>
+          </a>
               <?php } else if ($row['me_name'] == "CONTACT US") { ?>
-              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color contact" : "gnb_1dlie contact"; ?>">
-
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color " : "gnb_1dlie "; ?>">
+              <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da contact">
+            <?php echo $row['me_name'] ?>
+          </a>
               <?php } else if ($row['me_name'] == "ART") { ?>
-              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color art" : "gnb_1dlie art"; ?>">
+              <li class="gnb_1dli <?php echo $_GET["bo_table"] == "ani" ? "menu_color " : "gnb_1dlie "; ?>">
+              <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da art">
+            <?php echo $row['me_name'] ?>
+          </a>
 
           <?php } else if ($row['me_name'] == "ANI") { ?>
                 <li class="gnb_1dli <?php if ($_GET["bo_table"] == "ani" && $_GET["sca"] == "애니") {
@@ -93,10 +106,10 @@ include_once(G5_LIB_PATH . '/popular.lib.php');
                       <li class="gnb_1dli ">
           <?php } ?>
 
-
+<!-- 
           <a href="<?php echo $row['me_link']; ?>" target="_<?php echo $row['me_target']; ?>" class="gnb_1da">
             <?php echo $row['me_name'] ?>
-          </a>
+          </a> -->
           <a class="">
             <?= $act_3; ?>
           </a>
