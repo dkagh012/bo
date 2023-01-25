@@ -128,7 +128,7 @@ ul.bxslider {
   font-size: 20px;
   height: 32px;
   text-indent: -9999px;
-  z-index: 9999;
+  z-index: 9;
 }
 .mainImages .bx-wrapper .bx-controls-direction a.disabled {
   display: none;

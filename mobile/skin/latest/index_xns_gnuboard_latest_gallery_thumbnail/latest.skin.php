@@ -18,62 +18,70 @@ if (G5_IS_MOBILE) {
 $list_count = (is_array($list) && $list) ? count($list) : 0;
 ?>
 
-
+<div class="xns_title xns_background">
+  <h2>새소식</h2>
+  <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more">
+    <span class="sound_only">
+      <?php echo $bo_subject ?>
+    </span>더 보기
+  </a>
+</div>
 <div class="xns_gnuboard_latest_gallery_thumbnail xns_background">
-  <div class="xns_title">
-    새소식
-  </div>
-  <?php for ($i = 0; $i < $list_count; $i++) { ?>
-    <?php
-    //썸네일 설정
-    $thumb = get_list_thumbnail($bo_table, $list[$i]['wr_id'], $thumb_width, $thumb_height, false, true);
-    ?>
-    <div class="responsive">
-      <div class="gallery">
-        <a href="<?php echo $list[$i]['href'] ?>">
-          <?php if ($thumb['src']) { ?>
-            <img class="thumb" src="<?php echo $thumb['src'] ?>" />
-          <?php } else { ?>
-          <?php } ?>
-          <img class="background_image" src="<?php echo $latest_skin_url ?>/images/noimage_480x360.png" />
-        </a>
-        <div class="desc">
+  <div class="xns_display">
 
-          <ul>
-            <li class="slide_title cut">
-              <a href="<?php echo $list[$i]['href'] ?>">
-                <!-- 카테고리 -->
-                <div class=slide_title_desc>
-                  [<?php
-                  if ($list[$i]['ca_name']) {
-                    echo $list[$i]['ca_name'];
-                  }
-                  ?>]
-                  <!-- 이름 -->
-                  <?php echo $list[$i]['subject'] ?>
-                </div>
-                <div class="slide_content">
-                  <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
-                </div>
-              </a>
-            </li>
+    <?php for ($i = 0; $i < $list_count; $i++) { ?>
+      <?php
+      //썸네일 설정
+      $thumb = get_list_thumbnail($bo_table, $list[$i]['wr_id'], $thumb_width, $thumb_height, false, true);
+      ?>
+      <div class="responsive">
+        <div class="gallery">
+          <a href="<?php echo $list[$i]['href'] ?>">
+            <?php if ($thumb['src']) { ?>
+              <img class="thumb" src="<?php echo $thumb['src'] ?>" />
+            <?php } else { ?>
+            <?php } ?>
+            <img class="background_image" src="<?php echo $latest_skin_url ?>/images/noimage_480x360.png" />
+          </a>
+          <div class="desc">
 
-            <li class="slide_date">
+            <ul>
+              <li class="slide_title cut">
+                <a href="<?php echo $list[$i]['href'] ?>">
+                  <!-- 카테고리 -->
+                  <div class=slide_title_desc>
+                    [<?php
+                    if ($list[$i]['ca_name']) {
+                      echo $list[$i]['ca_name'];
+                    }
+                    ?>]
+                    <!-- 이름 -->
+                    <?php echo $list[$i]['subject'] ?>
+                  </div>
+                  <div class="slide_content">
+                    <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
+                  </div>
+                </a>
+              </li>
 
-              <?php
-              // echo $list[$i]['datetime'] 
-              ?>
-              <?php
-              if ($list[$i]['comment_cnt']) {
-                //    echo "<span class='slide_comm'>+".$list[$i]['comment_cnt']."</span>";
-              }
-              ?>
-            </li>
+              <li class="slide_date">
 
-          </ul>
+                <?php
+                // echo $list[$i]['datetime'] 
+                ?>
+                <?php
+                if ($list[$i]['comment_cnt']) {
+                  //    echo "<span class='slide_comm'>+".$list[$i]['comment_cnt']."</span>";
+                }
+                ?>
+              </li>
 
+            </ul>
+
+          </div>
         </div>
       </div>
-    </div>
+
   <?php } ?>
+  </div>
 </div>
