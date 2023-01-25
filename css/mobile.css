@@ -102,8 +102,10 @@ box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     #hd_sch{display:block !important}
 }
 .menu_color a{
-    color:
-#26E2B3;
+    color:#26E2B3;
+}
+.gnb_1dli>a{
+    font-weight: 100;
 }
 
 
@@ -604,9 +606,7 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.2);}
     .gnb_1da{
     font-size:1rem;
     }
-    .gnb_1dli{
-    padding: 3px 15px;}
-    
+
     #hd_wrapper{
         padding: 0px 10px;
     }
