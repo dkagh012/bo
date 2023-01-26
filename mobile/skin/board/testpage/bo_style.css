@@ -1,14 +1,13 @@
 @charset "utf-8";
 
 /* ### 기본 스타일 커스터마이징 시작 ### */
-
 /* 게시판 버튼 */
 /* 목록 버튼 */
 .bo_latestBackground {
     padding: 0 160px;
-    max-width:1920px;
-    width:100%;
-    margin:0 auto;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .bo_latestform {
@@ -159,8 +158,6 @@
     display: inline-block
 }
 
-
-
 #bo_cate h2 {
     width: 0;
     height: 0;
@@ -172,7 +169,7 @@
 #bo_cate ul {
     white-space: nowrap;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch ;
+    -webkit-overflow-scrolling: touch;
 }
 
 #bo_cate ul:after {
@@ -185,7 +182,6 @@
 #bo_cate ul::-webkit-scrollbar {
     display: none;
 }
-
 
 .bo_btn {
     position: relative;
@@ -296,19 +292,20 @@
 }
 
 .board_wr {
-    /* background: #fff; */
+    /* background: #fff;
+     */
     margin: 10px 0;
     border-radius: 3px;
     position: relative
 }
 
 .bo_ul li {
-    border-bottom: 1px solid #f1f3f6;
-    padding: 16px 20px;
+    padding: 16px;
     line-height: 20px;
     position: relative;
     margin-bottom: 8px;
-    background: white;
+    background: #040B11;
+    display:flex;
 }
 
 .bo_ul .bo_notice {
@@ -316,32 +313,35 @@
     background: #edf5fc
 }
 
-.bo_ul li:hover {
-    background: #f8f9fb
+
+.bo_list_left {
+    width: 70%;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.bo_ca {
+    padding-bottom: 24px;
 }
 
-.bo_ul li:after {
-    display: block;
-    visibility: hidden;
-    clear: both;
-    content: ""
+.bo_list_right {
+    width: 30%;
 }
+.bo_list_right>a>img{
+    width: 100%;
+}
+
 
 .bo_current {
     color: #e8180c
 }
 
 .bo_cate_link {
-    display: inline-block;
-    font-weight: normal;
-    text-decoration: none;
-    color: #26E2B3;
-    background: rgb(247, 247, 240);
-    font-size: 0.92em;
-    padding: 4px 8px;
-    border-radius: 6px;
-    line-height: 19px;
-    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 16px;
+    background: #1E1E2D;
+    color: white;
+    border-radius: 4px;
 }
 
 /* 글제목줄 분류스타일 */
@@ -360,7 +360,6 @@
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
-    border-top: 1px solid #ddd;
 }
 
 .bo_info i {
@@ -461,9 +460,7 @@
     #bo_sch .sch_btn {
         top: 5px
     }
-
 }
-
 
 /* 게시판 쓰기 */
 #bo_w #wr_email,
@@ -1296,7 +1293,6 @@
 }
 
 .bo_vc_w_info #captcha {
-    
     display: block;
     clear: both;
 }
@@ -1377,7 +1373,6 @@
 #bo_vc_sns input {
     margin: 0 5px 0 0
 }
-
 
 @media (min-width: 970px) {
     #bo_vc article {
@@ -1489,10 +1484,6 @@
     padding: 0 160px;
 }
 
-
-
-
-
 #bo_cate li {
     padding: 0 10px;
     color: #fff;
@@ -1519,15 +1510,15 @@
 }
 
 /* #bo_cate #bo_cate_on:before {
-    background: #bd00c9;
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px
-} */
-
+     background: #bd00c9;
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 2px 
+}
+ */
 .latest_list {
     margin: 0px auto;
     width: 50%;
@@ -1596,15 +1587,13 @@
     font-size: 14px;
     line-height: 20px;
     /* identical to box height, or 143% */
-
-
     color: #FFFFFF;
 }
 
 .latest_best {
     width: 25%;
     margin: 0 auto;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -1653,53 +1642,44 @@
     font-weight: 500;
 }
 
-.lat_tit_o {
-    width: 4px;
-    height: 4px;
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgb(234, 81, 40);
-    left: -8px;
-    top: 11px;
-}
-
 .bo_content {
     width: 100%;
+    height: 100%;
 }
 
 .bo_content a {
-
-    font-size: 14px;
+    font-size: 16px;
     line-height: 26px;
     color: rgb(179 178 176);
 }
-.bo_ul_admin{
+
+.bo_ul_admin {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
-.bo_name {
-    padding: 10px 0;
+
+
+
+.bo_hit_box {
+
+    padding-bottom: 16px;
+
 }
-.bo_name span{
-    font-weight:normal;
+
+.bo_title>strong {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
 }
-.bo_hit_box{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20px;
-    background-color: rgb(247, 247, 240);
-    border-bottom: 1px solid rgb(232, 231, 224);
-    align-items: center;
-}
-.bo_title{
-    color: #26E2B3;
-}
-.bo_more{
+
+.bo_more {
     color: #26E2B3;
     border-bottom: 1px solid;
 }
+
 .latest_best .latest_list_link {
     padding: 16.5px 0;
     color: white;
