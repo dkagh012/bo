@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.cm_gnuboard_latest_gallery_thumbnail { position:relative; overflow:hidden; }
+.cm_gnuboard_latest_gallery_thumbnail {position:relative;overflow:hidden;display: flex;flex-wrap: wrap;justify-content: flex-start;gap: 63px calc(57px / 3);}
 
 .cm_gnuboard_latest_gallery_thumbnail a {
   color:#000; text-decoration:none;
@@ -47,8 +47,8 @@ div.cm-desc {
 
 .cm-responsive {
   float: left;
-  width: 31%;
   margin-bottom: 60px;
+  width: calc(33% - 10px);
 }
 
 .cm-slide_title.cut {
@@ -60,25 +60,25 @@ div.cm-desc {
   margin: 0 auto;
 }
 .cm_title{
-  font-family: 'Noto Sans CJK KR';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 28px;
-  margin-bottom: 24px;
-  text-transform: uppercase;
+    font-family: 'Noto Sans CJK KR';
+    font-weight: 700;
+    margin-top: 100px;
+    font-size: 28px;
+    display: flex;
+    margin-bottom: 32px;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: space-between;
+}
+.cm_title>a {
+  font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
   color: #FFFFFF;
 }
-.cm_background>div:nth-child(2) {margin: 0px 50px 0px 0px;}
-.cm_background>div:nth-child(3) {margin: 0px 50px 0px 0px;}
-.cm_background>div:nth-child(5) {margin: 0px 50px 0px 0px;}
-.cm_background>div:nth-child(6) {margin: 0px 50px 0px 0px;}
-.cm_background>div:nth-child(8) {margin: 0px 50px 0px 0px;}
-.cm_background>div:nth-child(9) {margin: 0px 50px 0px 0px;}
 
 @media all and (max-width:1440px){
-  .cm-responsive{
-    width: 30%;
-}
 
 }
 @media all and (max-width:1024px){
@@ -86,15 +86,8 @@ div.cm-desc {
   div.cm-gallery img {
     height: 200px;
   }
-  .cm-responsive{
-    width: 29%;
-}
-.cm_background>div:nth-child(2) {margin: 0px 62px 0px 0px;}
-.cm_background>div:nth-child(3) {margin: 0px 62px 0px 0px;}
-.cm_background>div:nth-child(5) {margin: 0px 62px 0px 0px;}
-.cm_background>div:nth-child(6) {margin: 0px 62px 0px 0px;}
-.cm_background>div:nth-child(8) {margin: 0px 62px 0px 0px;}
-.cm_background>div:nth-child(9) {margin: 0px 62px 0px 0px;}
+
+
 }
 
 .cm-slide_title_desc {

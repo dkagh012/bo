@@ -75,13 +75,11 @@ color: #FFFFFF;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 63px calc(60px / 3);
+  gap: 63px calc(57px / 3);
 }
 
 @media all and (max-width:1440px){
-  .responsive {
-    width: 30%;
-    }
+
 }
 
 @media all and (max-width:1024px){
@@ -89,9 +87,7 @@ color: #FFFFFF;
 .gallery img {
   height: 200px;
 }
-.responsive {
-  width: 29%;
-}
+
 }
 
 .slide_content {

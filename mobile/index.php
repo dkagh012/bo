@@ -12,7 +12,7 @@ add_javascript('<script src="'.G5_JS_URL.'/jquery.bxslider.js"></script>', 10);
 
     <!-- 메인화면 최신글 시작 -->
     <?php
-echo latest('theme/index_main', 'ani', 10, 23);
+echo latest('theme/index_main', 'ani', 5, 23);
     ?>
 
     <!-- 메인화면 최신글 끝 -->
@@ -26,7 +26,7 @@ echo latest('theme/index_xns_gnuboard_latest_gallery_thumbnail', 'ani', 6, 23);
 </div>
 <div class=latest_img>
 <?php
-echo latest('theme/index_community', 'ani', 9, 23);
+echo latest('theme/index_community', 'ani', 27, 23);
 
 ?>
 </div>
