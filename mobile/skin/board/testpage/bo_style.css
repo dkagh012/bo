@@ -301,11 +301,12 @@
 
 .bo_ul li {
     padding: 16px;
+    display: flex;
     line-height: 20px;
     position: relative;
     margin-bottom: 8px;
+    overflow: hidden;
     background: #040B11;
-    display:flex;
 }
 
 .bo_ul .bo_notice {
@@ -315,7 +316,8 @@
 
 
 .bo_list_left {
-    width: 70%;
+    width: 100%;
+    float: left;
     padding-right: 24px;
     display: flex;
     flex-direction: column;
@@ -325,7 +327,8 @@
 }
 
 .bo_list_right {
-    width: 30%;
+    width: 50%;
+    float: left;
 }
 .bo_list_right>a>img{
     width: 100%;
@@ -1652,7 +1655,21 @@
     line-height: 26px;
     color: rgb(179 178 176);
 }
+.bo_content>a>p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 
+}
+.bo_comment{
+    display: flex;
+}
+
+.bo_info2{
+    display: flex;
+}
 .bo_ul_admin {
     display: flex;
     flex-direction: column;

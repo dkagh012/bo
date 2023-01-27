@@ -103,7 +103,6 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
             <input type="hidden" name="page" value="<?php echo $page ?>">
             <input type="hidden" name="sw" value="">
 
-
             <script>
               $(function () {
                 $(".view_op_btn_list").click(function () {
@@ -218,13 +217,18 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
         </div>
       </div>
     </div>
-    <div class="latest_best">
-      <?php if ($is_member) { ?>
-        <a href="http://127.0.0.1/bbs/board.php?bo_table=qowjdxo&level_ck=y&sop=and&sfl=mb_id&stx={$member['mb_id']}"
-          class="latest_list_link">내 프로필로 이동</a>
-      <?php } ?>
-
-    </div>
+    <ul class="latest_best">
+        <?php if ($list_href || $write_href) { ?>
+            <?php if ($list_href) { ?><li><a href="<?php echo $list_href ?>" class="btn_b01">목록</a></li><?php } ?>
+           
+            <?php if ($write_href) { ?>
+            <li><a href="<?php echo $write_href ?>" class="btn_b02">글쓰기</a></li>
+            <?php } else { ?>
+            <li><a href='javascript:window.alert("로그인후 이용하세요");' class="btn_b02">글쓰기</a></li>
+            <?php } ?>
+           
+        <?php } ?>
+        </ul>
   </div>
 </div>
 <?php if ($is_checkbox) { ?>
