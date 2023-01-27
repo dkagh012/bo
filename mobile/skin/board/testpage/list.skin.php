@@ -138,72 +138,71 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                   ?>
                   <li class="<?php if ($list[$i]['is_notice'])
                     echo "bo_notice"; ?>">
+                    
+                      <div class="bo_list_left">
 
-                    <div class="bo_list_left">
+                        <div class="bo_ca">
+                          <?php
+                          if ($is_category && $list[$i]['ca_name']) {
+                            ?>
+                            <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link">
+                              <?php echo $list[$i]['ca_name'] ?>
+                            </a>
+                          <?php } ?>
+                        </div>
 
-                      <div class="bo_ca">
-                        <?php
-                        if ($is_category && $list[$i]['ca_name']) {
-                          ?>
-                          <a href="<?php echo $list[$i]['ca_name_href'] ?>" class="bo_cate_link">
-                            <?php echo $list[$i]['ca_name'] ?>
+
+                        <div class="bo_content">
+                          <a href="<?php echo $list[$i]['href'] ?>">
+                            <p>
+                              <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
+                            </p>
                           </a>
-                        <?php } ?>
-                      </div>
+                        </div>
+                        <div class="bo_info_form">
 
-
-                      <div class="bo_content">
-                        <a href="<?php echo $list[$i]['href'] ?>">
-                          <p>
-                            <?php echo cut_str(strip_tags($list[$i]['wr_content']), 100) ?>
-                          </p>
-                        </a>
-                      </div>
-                      <div class="bo_info_form">
-
-                        <div class="bo_info">
-                          <div class="bo_info2">
-                            <p>
-                              <span class="lt_info_view"><i class="xi-thumbs-up xi-1x" aria-hidden="true"></i>
-                                <?php echo $list[$i]['wr_good'] ?>
-                              </span>
-                            </p>
-                            <p>
-                              <?php if ($list[$i]['comment_cnt']) { ?>
-                                <span class="sound_only">댓글</span><i class="xi-speech-o xi-1x" aria-hidden="true"></i>
-                                <?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span>
-                              <?php } ?>
-                            </p>
-                          </div>
-                          <div class="bo_comment">
-                            <div class="bo_name">
-                              <?php echo $list[$i]['name'] ?>
+                          <div class="bo_info">
+                            <div class="bo_info2">
+                              <p>
+                                <span class="lt_info_view"><i class="xi-thumbs-up xi-1x" aria-hidden="true"></i>
+                                  <?php echo $list[$i]['wr_good'] ?>
+                                </span>
+                              </p>
+                              <p>
+                                <?php if ($list[$i]['comment_cnt']) { ?>
+                                  <span class="sound_only">댓글</span><i class="xi-speech-o xi-1x" aria-hidden="true"></i>
+                                  <?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span>
+                                <?php } ?>
+                              </p>
                             </div>
-                            <span class="bo_date"><i class="xi-time-o x1-1x" aria-hidden="true"></i>
-                              <?php echo $list[$i]['datetime2'] ?>
-                            </span>
+                            <div class="bo_comment">
+                              <div class="bo_name">
+                                <?php echo $list[$i]['name'] ?>
+                              </div>
+                              <span class="bo_date"><i class="xi-time-o x1-1x" aria-hidden="true"></i>
+                                <?php echo $list[$i]['datetime3'] ?>
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="bo_list_right">
+                      <div class="bo_list_right">
                       <a class="titles_img" href="<?php echo $list[$i]['href'] ?>">
-                        <?php
-                        if ($list[$i]['is_notice']) { // 공지사항
-                          $img_content = '<img src="' . $board_skin_url . '/img/notice.jpg">';
-                        } else {
-                          $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], $board['bo_gallery_width'], $board['bo_gallery_height'], true, true);
-
-                          if ($thumb['src']) {
-                            $img_content = '<img src="' . $thumb['src'] . '" alt="' . $thumb['alt'] . '" >';
+                          <?php
+                          if ($list[$i]['is_notice']) { // 공지사항
+                            $img_content = '<img src="' . $board_skin_url . '/img/notice.jpg">';
                           } else {
-                            $img_content = '<img src="' . $board_skin_url . '/img/noimg.jpg">';
+                            $thumb = get_list_thumbnail($board['bo_table'], $list[$i]['wr_id'], $board['bo_gallery_width'], $board['bo_gallery_height'], true, true);
+
+                            if ($thumb['src']) {
+                              $img_content = '<img src="' . $thumb['src'] . '" alt="' . $thumb['alt'] . '" >';
+                            } else {
+                              $img_content = '<img src="' . $board_skin_url . '/img/noimg.jpg">';
+                            }
                           }
-                        }
-                        echo $img_content;
-                        ?>
-                      </a>
-                    </div>
+                          echo $img_content;
+                          ?>
+                        </div>
                   </li>
                 <?php } ?>
                 <?php if (count($list) == 0) {
@@ -217,18 +216,32 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
         </div>
       </div>
     </div>
+    <!-- <div class="latest_best">
+      <?php
+      // if ($is_member) { 
+      ?>
+        <a href="http://127.0.0.1/bbs/board.php?bo_table=qowjdxo&level_ck=y&sop=and&sfl=mb_id&stx={$member['mb_id']}"
+          class="latest_list_link">내 프로필로 이동</a>
+      <?php
+      //  } ?>
+
+    </div> -->
     <ul class="latest_best">
+      <?php if ($is_member) { ?>
         <?php if ($list_href || $write_href) { ?>
-            <?php if ($list_href) { ?><li><a href="<?php echo $list_href ?>" class="btn_b01">목록</a></li><?php } ?>
-           
-            <?php if ($write_href) { ?>
-            <li><a href="<?php echo $write_href ?>" class="btn_b02">글쓰기</a></li>
-            <?php } else { ?>
-            <li><a href='javascript:window.alert("로그인후 이용하세요");' class="btn_b02">글쓰기</a></li>
-            <?php } ?>
-           
+          <?php if ($list_href) { ?>
+            <li><a href="<?php echo $list_href ?>" class="btn_b01">목록</a></li>
+          <?php } ?>
+
+          <?php if ($write_href) { ?>
+            <li><a href="<?php echo $write_href ?>" class="latest_list_link">글쓰기</a></li>
+          <?php } else { ?>
+            <li><a href='javascript:window.alert("로그인후 이용하세요");' class="latest_list_link">글쓰기</a></li>
+          <?php } ?>
+
         <?php } ?>
-        </ul>
+      <?php } ?>
+    </ul>
   </div>
 </div>
 <?php if ($is_checkbox) { ?>

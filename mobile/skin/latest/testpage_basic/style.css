@@ -10,7 +10,9 @@
 .lt_box>ul>li {
   padding: 16px 0;
 }
-
+.hit_box{
+  padding-bottom: 35px;
+}
 .latest_hit_box>a>strong {
     font-weight: 700;
     font-size: 16px;

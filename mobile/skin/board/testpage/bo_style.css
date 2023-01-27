@@ -327,7 +327,7 @@
 }
 
 .bo_list_right {
-    width: 50%;
+    width: 42%;
     float: left;
 }
 .bo_list_right>a>img{
@@ -1698,10 +1698,13 @@
 }
 
 .latest_best .latest_list_link {
-    padding: 16.5px 0;
+    padding: 12.5px 0;
     color: white;
     text-align: center;
     background: #040B11;
     border-radius: 4px;
+    display: block;
+    font-size: 18px;
     margin-bottom: 66px;
+    font-weight: 700;
 }
