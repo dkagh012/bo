@@ -304,6 +304,7 @@
     display: flex;
     line-height: 20px;
     position: relative;
+    border-radius: 4px;
     margin-bottom: 8px;
     overflow: hidden;
     background: #040B11;

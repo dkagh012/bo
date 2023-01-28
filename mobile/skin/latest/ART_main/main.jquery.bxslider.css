@@ -105,7 +105,7 @@ ul.bxslider {
   background: url('images/left.png');
   background-repeat: no-repeat;
   background-position: right;
-  left: 82%;
+  left: 70%;
   background-size: 30px;
 }
 .mainImages .bx-wrapper .bx-prev:hover,
@@ -116,7 +116,7 @@ ul.bxslider {
   background: url('images/right.png');
   background-repeat: no-repeat;
   background-size: 30px;
-  left: 88%;
+  left: 85%;
 }
 
 .mainImages .bx-wrapper .bx-controls-direction a {
@@ -159,10 +159,10 @@ ul.bxslider {
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
 .mainImages .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   text-align: right;
-  bottom: 8%;
+  bottom: 8.5%;
   color: white;
   font-size: 16px;
-  left: 84.5%;
+  left: 77.5%;
 }
 .mainImages .bx-wrapper .bx-pager.bx-default-pager a {
   display: block;

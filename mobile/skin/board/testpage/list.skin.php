@@ -227,21 +227,15 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
 
     </div> -->
     <ul class="latest_best">
-      <?php if ($is_member) { ?>
-        <?php if ($list_href || $write_href) { ?>
-          <?php if ($list_href) { ?>
-            <li><a href="<?php echo $list_href ?>" class="btn_b01">목록</a></li>
-          <?php } ?>
-
-          <?php if ($write_href) { ?>
-            <li><a href="<?php echo $write_href ?>" class="latest_list_link">글쓰기</a></li>
-          <?php } else { ?>
-            <li><a href='javascript:window.alert("로그인후 이용하세요");' class="latest_list_link">글쓰기</a></li>
-          <?php } ?>
-
-        <?php } ?>
-      <?php } ?>
-    </ul>
+    <?php if ($is_member) { ?>
+      <li><a href="<?php echo $write_href ?>" class="latest_list_link">글쓰기</a></li>
+      
+    <?php } else { ?>
+      
+      <li><a href="<?php echo G5_BBS_URL ?>/login.php" class="latest_list_link">비회원</a></li>
+    <?php } ?> 
+    
+  </ul>
   </div>
 </div>
 <?php if ($is_checkbox) { ?>
