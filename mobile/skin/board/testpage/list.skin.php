@@ -19,6 +19,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
 <div class="bo_latestBackground">
   <div class="bo_latestform">
     <div class="latest_ca">
+      <div class="testpage_ca">
       <div class="latest_search_form">
 
 
@@ -84,11 +85,15 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
           </nav>
         <?php } ?>
       </div>
+      </div>
     </div>
 
     <div class="latest_list">
       <?php echo latest("theme/testpage_notice", 'ani', 5, 30); ?>
-      <?php echo latest_basic("theme/testpage_basic", "ani", 5, 50, "", "", "70", "wr_hit"); ?>
+          
+            <?php 
+      echo latest_basic("theme/testpage_ba", "ani", 5, 50, "", "", "70", "wr_hit") 
+      ?>
 
       <div id="bo_list">
         <div class="board_wr">
@@ -229,6 +234,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
 
     </div> -->
     <ul class="latest_best">
+      <div class="testpage_best">
     <?php if ($is_member) { ?>
       <li><a href="<?php echo $write_href ?>" class="latest_list_link">글쓰기</a></li>
       
@@ -236,7 +242,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
       
       <li><a href="<?php echo G5_BBS_URL ?>/login.php" class="latest_list_link">비회원</a></li>
     <?php } ?> 
-    
+    </div>
   </ul>
   </div>
 </div>

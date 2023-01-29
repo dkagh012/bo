@@ -1739,3 +1739,6 @@
 .more_button {
     color: white;
 }
+.pg_wrap{
+    display:none;
+}

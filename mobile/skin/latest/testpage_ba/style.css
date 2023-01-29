@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* 최근게시물 스킨 (latest) */
+
+
+.lt_box {
+    background: #040B11;
+    padding: 12px 16px;
+}
+.lt_box>ul>li {
+  padding: 16px 0;
+}
+.hit_box{
+  padding-bottom: 35px;
+}
+.latest_hit_box>a>strong {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+/* identical to box height */
+    color: #FFFFFF;
+}
+
+.latest_hit_box {
+    padding-bottom: 16px;
+}
+.lt_info {
+  display: flex;
+  color: white;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.lt_info>div>a>p {
+  color: white;
+}
+
+.lt_info>div>a {
+  display: flex;
+}
+.lt_info>div>a>p:nth-child(1) {
+  margin-right: 4px;
+  color:#26E2B3;
+}
+.lt_info>div:nth-child(1){
+  width: 77%;
+}
+.lt_info>div:nth-child(3){
+  width: 23%;
+  display:flex;
+}
+.lt_info_title>p:nth-child(1) {
+  width: 50%;
+}
+
+.lt_info_title>p:nth-child(2) {
+  width: 50%;
+}
