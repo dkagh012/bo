@@ -19,6 +19,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
 <div class="bo_latestBackground">
   <div class="bo_latestform">
     <div class="latest_ca">
+      <div class="latest_cafix">
       <div class="latest_search_form">
 
 
@@ -61,15 +62,8 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
               return true;
             }
           </script>
-
         </div>
-
-        <?php
-        // echo popular('theme/basic'); 
-// 인기검색어 ?>
-
       </div>
-
       <div id="bo_list">
         <h1 class="id_tit">카테고리</h1>
         <?php if ($is_category) { ?>
@@ -84,6 +78,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
           </nav>
         <?php } ?>
       </div>
+            </div>
     </div>
 
     <div class="latest_list">
@@ -195,10 +190,10 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
                     </div>
 
                   </li>
-                <?php } ?>
-                <?php if (count($list) == 0) {
-                  echo '<li class="empty_table" datano="no">게시물이 없습니다.</li>';
-                } ?>
+                  <?php } ?>
+                <?php 
+                 if (count($list) == 0) { echo '<li class="empty_table" datano="no">게시물이 없습니다.</li>'; } ;
+                ?>
               </ul>
               <div class="more_button">더보기 more</div>
             </div>
@@ -208,8 +203,8 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
         </div>
       </div>
     </div>
-
-    <ul class="latest_best">
+    <div class="latest_best">
+    <ul>
       <?php if ($is_member) { ?>
         <li><a href="<?php echo $write_href ?>" class="latest_list_link">글쓰기</a></li>
 
@@ -219,6 +214,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/ART_style.c
       <?php } ?>
 
     </ul>
+    </div>
   </div>
 </div>
 <?php if ($is_checkbox) { ?>

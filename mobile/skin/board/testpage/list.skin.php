@@ -132,7 +132,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                     피드</strong></a>
               </div>
 
-              <ul class="<?php if ($is_checkbox) { ?>bo_ul_admin<?php } ?>">
+              <ul id="ajax_data" >
                 <?php
                 for ($i = 0; $i < count($list); $i++) {
                   ?>
@@ -202,13 +202,15 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                           }
                           echo $img_content;
                           ?>
+                          </a>
                         </div>
                   </li>
                 <?php } ?>
-                <?php if (count($list) == 0) {
-                  echo '<li class="empty_table">게시물이 없습니다.</li>';
-                } ?>
+                <?php 
+                 if (count($list) == 0) { echo '<li class="empty_table" datano="no">게시물이 없습니다.</li>'; } ;
+                ?>
               </ul>
+              <div class="more_button">더보기 more</div>
             </div>
 
 
@@ -247,67 +249,40 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
 <!-- 페이지 -->
 <?php echo $write_pages; ?>
 
-<?php if ($is_checkbox) { ?>
-  <script>
-    function all_checked(sw) {
-      var f = document.fboardlist;
-
-      for (var i = 0; i < f.length; i++) {
-        if (f.elements[i].name == "chk_wr_id[]")
-          f.elements[i].checked = sw;
-      }
+<script>
+    <?php if($write_pages) {?>
+    const page_on = $("#container").find(".pg_current");
+const page_check = $(".pg_current").text();
+$(document).ready(function () {
+    if (page_check == "object Object") {
+        $(".pg_current").text("0");
+    } else {
+        $(".pg_current").text("2");
     }
-
-    function fboardlist_submit(f) {
-      var chk_count = 0;
-
-      for (var i = 0; i < f.length; i++) {
-        if (f.elements[i].name == "chk_wr_id[]" && f.elements[i].checked)
-          chk_count++;
-      }
-
-      if (!chk_count) {
-        alert(document.pressed + "할 게시물을 하나 이상 선택하세요.");
-        return false;
-      }
-
-      if (document.pressed == "선택복사") {
-        select_copy("copy");
-        return;
-      }
-
-      if (document.pressed == "선택이동") {
-        select_copy("move");
-        return;
-      }
-
-      if (document.pressed == "선택삭제") {
-        if (!confirm("선택한 게시물을 정말 삭제하시겠습니까?\n\n한번 삭제한 자료는 복구할 수 없습니다\n\n답변글이 있는 게시글을 선택하신 경우\n답변글도 선택하셔야 게시글이 삭제됩니다."))
-          return false;
-
-        f.removeAttribute("target");
-        f.action = g5_bbs_url + "/board_list_update.php";
-      }
-
-      return true;
-    }
-
-    // 선택한 게시물 복사 및 이동
-    function select_copy(sw) {
-      var f = document.fboardlist;
-
-      if (sw == 'copy')
-        str = "복사";
-      else
-        str = "이동";
-
-      var sub_win = window.open("", "move", "left=50, top=50, width=500, height=550, scrollbars=1");
-
-      f.sw.value = sw;
-      f.target = "move";
-      f.action = g5_bbs_url + "/move.php";
-      f.submit();
-    }
-  </script>
+});
+$(".more_button").click(function(){
+    $( this ).html('<i class="fa fa-spinner fa-spin"></i>');
+    const disp_li_length = $("#gallery_json > li").length;
+    const page_n = $(".pg_current").html();
+    $.get("<?=G5_URL?>/bbs/board.php?bo_table=<?=$bo_table?>&ajax_ck=1&sca=<?php echo urlencode($sca) ?>&page="+page_n, function( data ) {
+        const append_data = $(data).find("#ajax_data").html();
+        const cking = $(data).find(".empty_table").attr("datano");
+        if (page_check == 0) {
+            $(".more_button").html("더 이상 게시글이 없습니다.");
+            return false;
+        }
+        if (cking != "no"){
+            $("#page_txt").html("");
+            $("#ajax_data").append(append_data);
+            $(".pg_current").html(parseInt(page_n)+1);
+            $(".more_button").html("더 보기");
+        } else {
+            $(".more_button").html("더 이상 게시글이 없습니다.");
+        }
+    });
+});
 <?php } ?>
+
+
+  </script>
 <!-- 게시판 목록 끝 -->

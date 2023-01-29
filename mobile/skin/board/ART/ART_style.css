@@ -15,6 +15,7 @@
     justify-content: space-between;
     width: 100%;
     padding-top: 50px;
+    position: relative;
 }
 
 /* 관리자일 때 */
@@ -282,6 +283,7 @@
 
 #bo_list {
     margin: 10px 0;
+    width: 100%;
     position: relative
 }
 
@@ -1529,9 +1531,9 @@
 }
  */
 .latest_list {
-    margin: 0px auto;
-    width: 50%;
-    padding: 0 50px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #bo_cate ul {
@@ -1544,7 +1546,9 @@
 
 .latest_ca {
     margin: 0 auto;
-    width: 25%;
+    width: 100%;
+    position: relative;
+    max-width: 400px;
 }
 
 #dd {
@@ -1600,10 +1604,12 @@
 }
 
 .latest_best {
-    width: 25%;
     margin: 0 auto;
     display: flex;
+    position: relative;
     flex-direction: column;
+    max-width: 400px;
+    width: 100%;
 }
 
 .latest_list_form {
@@ -1714,6 +1720,22 @@
     margin-bottom: 66px;
     font-weight: 700;
 }
-.pg_wrap{
-    display: none                                                                                                                                                                                                                                                                                                                                                       ;
+
+.latest_cafix {
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+}
+
+.latest_best ul {
+    position: fixed;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+}
+.more_button {
+    color: white;
 }
