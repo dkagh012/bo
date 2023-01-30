@@ -192,7 +192,6 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                         </div>
                       </div>
                       <div class="bo_list_right">
-                      <a class="titles_img" href="<?php echo $list[$i]['href'] ?>">
                           <?php
                           if ($list[$i]['is_notice']) { // 공지사항
                             $img_content = '<img src="' . $board_skin_url . '/img/notice.jpg">';
@@ -207,7 +206,7 @@ add_stylesheet('<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.cs
                           }
                           echo $img_content;
                           ?>
-                          </a>
+                
                         </div>
                   </li>
                 <?php } ?>

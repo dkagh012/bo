@@ -13,7 +13,9 @@ $thumb_width = 2000;
 $thumb_height = 600;
 $list_count = (is_array($list) && $list) ? count($list) : 0;
 ?>
-
+  <div class="latest_hit_box">
+    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_title"><strong>1월 인기 아트</strong></a>
+  </div>
 <div class="mainImages mainImages_<?php echo $board['bo_table'] ?>">
   <ul class="gall_lt">
     <?php

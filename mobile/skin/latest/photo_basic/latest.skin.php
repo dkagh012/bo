@@ -27,8 +27,7 @@ $thumb_height = 150;
         <a href="<?php echo $list[$i]['href'] ?>" class="photo_lt_img"><?php echo $img_content; ?></a>
         <div class="photo_basic_title">
 
-          <span class="bo_cate_link">[
-            <?php echo $list[$i]['ca_name'] ?>]
+          <span class="bo_cate_link">[<?php echo $list[$i]['ca_name'] ?>]
           </span>
           <?php
 
@@ -47,7 +46,7 @@ $thumb_height = 150;
           </a>
         </p>
         <span class="photo_lt_date">
-          <?php echo $list[$i]['datetime2'] ?>
+          <?php echo $list[$i]['datetime'] ?>
         </span>
       </li>
     <?php } ?>

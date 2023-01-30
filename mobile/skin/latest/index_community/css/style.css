@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.cm_gnuboard_latest_gallery_thumbnail {position:relative;overflow:hidden;display: flex;flex-wrap: wrap;justify-content: flex-start;gap: 63px calc(57px / 3);}
+.cm_gnuboard_latest_gallery_thumbnail {position:relative;overflow:hidden;display: flex;flex-wrap: wrap;justify-content: flex-start;gap: 60px calc(9.3% / 3);}
 
 .cm_gnuboard_latest_gallery_thumbnail a {
   color:#000; text-decoration:none;
@@ -47,8 +47,7 @@ div.cm-desc {
 
 .cm-responsive {
   float: left;
-  margin-bottom: 60px;
-  width: calc(33% - 10px);
+  width: calc(33% - 28px);
 }
 
 .cm-slide_title.cut {
