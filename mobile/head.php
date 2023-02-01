@@ -122,9 +122,9 @@ include_once( G5_LIB_PATH . '/popular.lib.php' );
           <?php } ?>
 
           <!-- 
-                              <a href="<?php echo $row[ 'me_link' ]; ?>" target="_<?php echo $row[ 'me_target' ]; ?>" class="gnb_1da">
-                                <?php echo $row[ 'me_name' ] ?>
-                              </a> -->
+                                  <a href="<?php echo $row[ 'me_link' ]; ?>" target="_<?php echo $row[ 'me_target' ]; ?>" class="gnb_1da">
+                                    <?php echo $row[ 'me_name' ] ?>
+                                  </a> -->
           <a class="">
             <?= $act_3; ?>
           </a>
@@ -176,7 +176,7 @@ include_once( G5_LIB_PATH . '/popular.lib.php' );
         </li>
       <?php }
       else { ?>
-        <li class="head_login"><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
+        <li class="head_login">로그인 / 회원가입</li>
       <?php } ?>
     </ul>
 </header>

@@ -9,7 +9,7 @@ add_javascript( '<script src="' . G5_JS_URL . '/jquery.bxslider.js"></script>', 
 
 ?>
 
-<div class="mb_login_Btn">
+<div class="LoginArea hide">
     <?php
 
     if ( ! $is_member ) {
@@ -87,7 +87,23 @@ add_javascript( '<script src="' . G5_JS_URL . '/jquery.bxslider.js"></script>', 
     });
     AOS.init();
 
+    function toggleClassList(target, className) {
+        target.classList.toggle(className);
+    }
+    function popupToggle(toggleBtn, area) {
+        if (document.querySelector(`.${toggleBtn}`) !== null) {
+            const BTN = document.querySelector(`.${toggleBtn}`)
+            const AREA = document.querySelector(`.${area}`)
+            BTN.addEventListener('click', () => toggleClassList(AREA, 'hide'));
 
+            AREA.addEventListener('click', (e) => {
+                if (e.target.className === AREA.className) {
+                    toggleClassList(AREA, 'hide');
+                };
+            });
+        };
+    }
+    popupToggle('head_login', 'LoginArea', 'xi-close-thin xi-2x');
 
 </script>
 
