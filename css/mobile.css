@@ -218,6 +218,7 @@ ul {
     left: 0;
     z-index: 10;
     background: #040B11;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 #hd:after {
@@ -566,9 +567,7 @@ ul {
     color: #26E2B3;
 }
 
-.gnb_1dli>a {
-    font-weight: 100;
-}
+
 
 
 #gnb {
@@ -739,7 +738,6 @@ a.gnb_1da:hover {
     height: 100%;
     overflow: hidden;
     font-size: 18px;
-    font-weight: bold;
     display: block;
 }
 
@@ -1784,8 +1782,9 @@ textarea.required {
     font-size: 16px;
     text-align: center;
     color: black;
-    font-weight: 700;
+    font-weight: 500;
     padding: 13px 17.5px;
+    cursor: pointer;
 }
 
 
@@ -1815,6 +1814,16 @@ textarea.required {
 .td_datetime {
     width: 150px;
     text-align: center
+}
+
+
+.admin_headLogin {
+    background: white;
+    position: fixed;
+    bottom: 5%;
+    right: 6%;
+    padding: 3%;
+    border-radius: 50px;
 }
 
 .td_group {

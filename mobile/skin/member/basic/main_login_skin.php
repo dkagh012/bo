@@ -3,44 +3,33 @@ if ( ! defined( '_GNUBOARD_' ) )
   exit; // 개별 페이지 접근 불가
 
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
-add_stylesheet( '<link rel="stylesheet" href="' . $member_skin_url . '/style.css">', 0 );
+add_stylesheet( '<link rel="stylesheet" href="' . $member_skin_url . '/main_login.style.css">', 0 );
 ?>
 
 <div id="mb_login" class="mbskin">
-  <h1 class="test"></h1>
-  <?php echo $g5[ 'title' ] ?>
+
+  <img class="logo_img" src="<?php echo G5_IMG_URL ?>/logo.png" alt="<?php echo $config[ 'cf_title' ]; ?>">
+  <div class="close_BTN"><i class="xi-close-thin xi-2x xi_bold"></i></div>
+  <h1 class="test">
+    간편 가입/로그인
   </h1>
 
   <form name="flogin" action="<?php echo $login_action_url ?>" onsubmit="return flogin_submit(this);" method="post"
     id="flogin">
     <input type="hidden" name="url" value="<?php echo $login_url ?>">
 
-    <div id="login_frm">
-      <label for="login_id" class="sound_only">아이디<strong class="sound_only"> 필수</strong></label>
-      <input type="text" name="mb_id" id="login_id" placeholder="아이디(필수)" required class="frm_input required"
-        maxLength="20">
-      <label for="login_pw" class="sound_only">비밀번호<strong class="sound_only"> 필수</strong></label>
-      <input type="password" name="mb_password" id="login_pw" placeholder="비밀번호(필수)" required class="frm_input required"
-        maxLength="20">
-      <div>
-        <input type="checkbox" name="auto_login" id="login_auto_login">
-        <label for="login_auto_login">자동로그인</label>
-      </div>
-      <input type="submit" value="로그인" class="btn_submit">
-    </div>
 
     <?php
     // 소셜로그인 사용시 소셜로그인 버튼
-    @include_once( get_social_skin_path() . '/social_login.skin.php' );
+    @include_once( get_social_skin_path() . '/mb_login.skin.php' );
     ?>
 
     <section class="mb_login_join">
-      <h2>회원로그인 안내</h2>
-
       <div>
-        <a href="<?php echo G5_BBS_URL ?>/password_lost.php" target="_blank" id="login_password_lost">회원정보찾기</a>
-        <a href="./register.php">회원 가입</a>
+        <input type="checkbox" name="auto_login" id="login_auto_login">
+        <label for="login_auto_login" class="autoLogin"> 로그인 상태 유지</label>
       </div>
+      <a class="mb_Privacy" href="<?php echo get_pretty_url( 'content', 'privacy' ); ?>">개인정보처리방침</a>
     </section>
 
 

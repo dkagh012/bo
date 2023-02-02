@@ -8,7 +8,7 @@
 
 .mbskin h1 {
   font-size: 1.75em;
-  margin: 40px 0 25px
+  margin: 35px 0;
 }
 
 .mbskin p {
@@ -403,10 +403,11 @@
   width: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 4rem;
+  padding: 72px 79px;
   background: #181822;
-  border-radius: 1.5rem;
   z-index: 13;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-weight: 100;
 }
 
 .close_BTN {
@@ -419,9 +420,10 @@
 }
 
 #mb_login h1 {
-  font-size: 2em;
+  font-size: 18px;
   text-align: center;
-  margin: 0 0 20px
+  color: white;
+  font-weight: 700;
 }
 
 #mb_login h2 {
@@ -464,15 +466,12 @@
 }
 
 #mb_login .mb_login_join {
-  padding: 10px 0 0
+  padding: 19px 0 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-#mb_login .mb_login_join:after {
-  display: block;
-  visibility: hidden;
-  clear: both;
-  content: ""
-}
+
 
 #mb_login .mb_login_join h2 {
   position: absolute;
@@ -484,8 +483,7 @@
 #mb_login .mb_login_join a {
   display: block;
   float: left;
-  width: 50%;
-  color: #4a5ba9
+  color: white;
 }
 
 #mb_login #login_password_lost {
@@ -493,9 +491,8 @@
   color: #999
 }
 
-#flogin {
-  padding: 30px;
-  margin: 20px 0;
+.autoLogin {
+  color: white;
 }
 
 #mb_login_notmb {
@@ -515,6 +512,10 @@
   padding: 0;
   margin: 10px;
   /* color: # */
+}
+
+.xi_bold {
+  font-weight: bold;
 }
 
 #guest_privacy p {

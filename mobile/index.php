@@ -8,40 +8,8 @@ add_javascript( '<script src="' . G5_JS_URL . '/jquery.bxslider.js"></script>', 
 
 
 ?>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
 
-<div class="LoginArea hide">
-    <?php
-
-    if ( ! $is_member ) {
-        $url   = isset( $_GET[ 'url' ] ) ? strip_tags( $_GET[ 'url' ] ) : '';
-        $od_id = isset( $_POST[ 'od_id' ] ) ? safe_replace_regex( $_POST[ 'od_id' ], 'od_id' ) : '';
-
-        if ( function_exists( 'social_check_login_before' ) ) {
-            $social_login_html = social_check_login_before();
-        }
-        $g5[ 'title' ] = '로그인';
-
-
-        // url 체크
-        check_url_host( $url );
-        $login_url        = login_url( $url );
-        $login_action_url = G5_HTTPS_BBS_URL . "/login_check.php";
-
-
-        $login_file       = $member_skin_path . '/main_login_skin.php';
-        if ( ! file_exists( $login_file ) )
-            $member_skin_path = G5_SKIN_PATH . '/member/basic';
-
-        include_once( $member_skin_path . '/main_login_skin.php' );
-
-
-        run_event( 'member_login_tail', $login_url, $login_action_url, $member_skin_path, $url );
-
-
-    }
-
-    ?>
-</div>
 
 <div class="latest_wr">
 
@@ -87,23 +55,6 @@ add_javascript( '<script src="' . G5_JS_URL . '/jquery.bxslider.js"></script>', 
     });
     AOS.init();
 
-    function toggleClassList(target, className) {
-        target.classList.toggle(className);
-    }
-    function popupToggle(toggleBtn, area) {
-        if (document.querySelector(`.${toggleBtn}`) !== null) {
-            const BTN = document.querySelector(`.${toggleBtn}`)
-            const AREA = document.querySelector(`.${area}`)
-            BTN.addEventListener('click', () => toggleClassList(AREA, 'hide'));
-
-            AREA.addEventListener('click', (e) => {
-                if (e.target.className === AREA.className) {
-                    toggleClassList(AREA, 'hide');
-                };
-            });
-        };
-    }
-    popupToggle('head_login', 'LoginArea', 'xi-close-thin xi-2x');
 
 </script>
 

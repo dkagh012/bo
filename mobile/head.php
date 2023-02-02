@@ -11,7 +11,39 @@ include_once( G5_LIB_PATH . '/connect.lib.php' );
 include_once( G5_LIB_PATH . '/popular.lib.php' );
 
 ?>
+<div class="LoginArea hide">
+  <?php
 
+  if ( ! $is_member ) {
+    $url   = isset( $_GET[ 'url' ] ) ? strip_tags( $_GET[ 'url' ] ) : '';
+    $od_id = isset( $_POST[ 'od_id' ] ) ? safe_replace_regex( $_POST[ 'od_id' ], 'od_id' ) : '';
+
+    if ( function_exists( 'social_check_login_before' ) ) {
+      $social_login_html = social_check_login_before();
+    }
+    $g5[ 'title' ] = '로그인';
+
+
+    // url 체크
+    check_url_host( $url );
+    $login_url        = login_url( $url );
+    $login_action_url = G5_HTTPS_BBS_URL . "/login_check.php";
+
+
+    $login_file       = $member_skin_path . '/main_login_skin.php';
+    if ( ! file_exists( $login_file ) )
+      $member_skin_path = G5_SKIN_PATH . '/member/basic';
+
+    include_once( $member_skin_path . '/main_login_skin.php' );
+
+
+    run_event( 'member_login_tail', $login_url, $login_action_url, $member_skin_path, $url );
+
+
+  }
+
+  ?>
+</div>
 <header id="hd">
   <h1 id="hd_h1">
     <?php echo $g5[ 'title' ] ?>
@@ -122,9 +154,9 @@ include_once( G5_LIB_PATH . '/popular.lib.php' );
           <?php } ?>
 
           <!-- 
-                                  <a href="<?php echo $row[ 'me_link' ]; ?>" target="_<?php echo $row[ 'me_target' ]; ?>" class="gnb_1da">
-                                    <?php echo $row[ 'me_name' ] ?>
-                                  </a> -->
+                                                      <a href="<?php echo $row[ 'me_link' ]; ?>" target="_<?php echo $row[ 'me_target' ]; ?>" class="gnb_1da">
+                                                        <?php echo $row[ 'me_name' ] ?>
+                                                      </a> -->
           <a class="">
             <?= $act_3; ?>
           </a>
@@ -177,14 +209,18 @@ include_once( G5_LIB_PATH . '/popular.lib.php' );
       <?php }
       else { ?>
         <li class="head_login">로그인 / 회원가입</li>
+        <li class="admin_headLogin"><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
       <?php } ?>
     </ul>
 </header>
 
 
-<script>
-  popupToggle('policyBtn', 'policyArea', 'xi-close-thin xi-2x');
 
+<script>
+
+  function toggleClassList(target, className) {
+    target.classList.toggle(className);
+  }
   function popupToggle(toggleBtn, area, closeBtnClass) {
     if (document.querySelector(`.${toggleBtn}`) !== null) {
       const BTN = document.querySelector(`.${toggleBtn}`)
@@ -198,10 +234,9 @@ include_once( G5_LIB_PATH . '/popular.lib.php' );
       });
     };
   }
-
+  popupToggle('head_login', 'LoginArea', 'xi-close-thin xi-2x xi_bold');
 
 </script>
-
 
 <div id="wrapper">
 
