@@ -39,7 +39,8 @@ body {
     font-size: 0.813em;
     background: #181822;
     height: 100%;
-    font-family: 'Noto Sans CJK KR';
+    font-weight: 100;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 html,
@@ -111,7 +112,6 @@ button {
 textarea,
 select {
     font-size: 1em;
-    font-family: 'Noto Sans CJK KR';
 }
 
 textarea {
@@ -218,7 +218,6 @@ ul {
     left: 0;
     z-index: 10;
     background: #040B11;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 #hd:after {
@@ -237,7 +236,7 @@ ul {
 }
 
 .hd_admin {
-    font-weight: bold;
+    ;
     display: block;
     color: #fff;
     padding: 10px;
@@ -619,7 +618,6 @@ ul {
     height: auto;
     overflow: hidden;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .art:hover a {
@@ -634,7 +632,6 @@ ul {
     height: auto;
     overflow: hidden;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .news:hover a {
@@ -650,7 +647,6 @@ ul {
     height: auto;
     overflow: hidden;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .free:hover a {
@@ -666,7 +662,6 @@ ul {
     height: auto;
     overflow: hidden;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .about:hover a {
@@ -701,7 +696,6 @@ ul {
     height: auto;
     overflow: hidden;
     font-size: 1.2rem;
-    font-weight: bold;
 }
 
 .contact:hover a {
@@ -755,7 +749,6 @@ a.gnb_1da:hover {
 .gnb_2da {
     color: #a8a6b0;
     padding: 0 15px;
-    font-weight: normal
 }
 
 .gnb_2da:hover {
@@ -848,9 +841,7 @@ a.gnb_1da:hover {
 
 #tnb .tnb_login {
     display: inline-block;
-    font-family: 'Noto Sans CJK KR';
     font-style: normal;
-    font-weight: 500;
     font-size: 22px;
     line-height: 33px;
     /* identical to box height */
@@ -1257,7 +1248,6 @@ a.gnb_1da:hover {
     border: 1px solid #ccc;
     background: #fff;
     font-size: 1.333em;
-    font-weight: bold;
     text-align: center;
     border-radius: 3px;
     vertical-align: top
@@ -1359,7 +1349,7 @@ a.gnb_1da:hover {
 
 .cke_sc_def dt {
     width: 50%;
-    font-weight: bold
+
 }
 
 .cke_sc_def dd {
@@ -1566,7 +1556,7 @@ a.btn_admin:hover {}
 .tbl_wrap caption {
     padding: 10px 0;
     color: #4b8b99;
-    font-weight: bold;
+    ;
     text-align: left
 }
 
@@ -1608,7 +1598,7 @@ a.btn_admin:hover {}
     border-color: #e3e3e5;
     background: #484848;
     color: #fff;
-    font-weight: bold;
+    ;
     text-align: center
 }
 
@@ -1663,7 +1653,7 @@ a.btn_admin:hover {}
 .tbl_head02 tfoot td {
     background: #484848;
     color: #fff;
-    font-weight: bold;
+    ;
     text-align: center
 }
 
@@ -1782,9 +1772,10 @@ textarea.required {
     font-size: 16px;
     text-align: center;
     color: black;
-    font-weight: 500;
     padding: 13px 17.5px;
+    letter-spacing: 0px;
     cursor: pointer;
+
 }
 
 
@@ -1888,7 +1879,7 @@ textarea.required {
 .new_win #win_title {
     margin-bottom: 10px;
     font-size: 1.2em;
-    font-weight: bold;
+    ;
     height: 50px;
     padding: 10px;
     line-height: 30px;
@@ -1944,7 +1935,7 @@ textarea.required {
     display: inline-block;
     height: 40px;
     line-height: 40px;
-    font-weight: bold
+
 }
 
 .new_win .win_btn .btn_close {
@@ -1954,7 +1945,7 @@ textarea.required {
     background: #c6c6d2;
     color: #666;
     text-decoration: none;
-    font-weight: bold;
+    ;
     height: 40px;
     border-radius: 3px;
     margin: 10px 0;
@@ -1968,7 +1959,7 @@ textarea.required {
     margin: 10px 0;
     padding: 0 10px;
     display: inline-block;
-    font-weight: bold;
+    ;
     vertical-align: top
 }
 
@@ -1981,7 +1972,6 @@ textarea.required {
 .sv_wrap {
     display: inline-block;
     position: relative;
-    font-weight: normal;
     line-height: 20px
 }
 
@@ -2016,7 +2006,6 @@ textarea.required {
     margin: 0;
     padding: 0 10px;
     line-height: 30px;
-    font-weight: normal;
     color: #bbb
 }
 
@@ -2112,7 +2101,6 @@ textarea.required {
     display: inline-block;
     background: #424B5A;
     color: #fff;
-    font-weight: normal;
     border-radius: 33px;
     line-height: 30px;
 }
