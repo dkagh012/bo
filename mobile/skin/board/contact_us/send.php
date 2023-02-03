@@ -20,18 +20,18 @@ if ( isset( $_POST[ 'email' ] ) ) {
 
   // validation expected data exists
   if (
-    ! isset( $_POST[ 'first_name' ] ) ||
+    // ! isset( $_POST[ 'first_name' ] ) ||
     ! isset( $_POST[ 'email' ] ) ||
-    ! isset( $_POST[ 'telephone' ] ) ||
-    ! isset( $_POST[ 'comments' ] )
+    ! isset( $_POST[ 'comments' ] ) ||
+    ! isset( $_POST[ 'toggleform' ] )
   ) {
     died( 'We are sorry, but there appears to be a problem with the form you submitted.' );
   }
 
-  $first_name    = $_POST[ 'first_name' ]; // required
+  // $first_name    = $_POST[ 'first_name' ]; // required
   $email_from    = $_POST[ 'email' ]; // required
-  $telephone     = $_POST[ 'telephone' ]; // not required
   $comments      = $_POST[ 'comments' ]; // required
+  $toggleform    = $_POST[ 'toggleform' ]; // required
 
   $error_message = "";
   $email_exp     = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$/';
@@ -53,10 +53,9 @@ if ( isset( $_POST[ 'email' ] ) ) {
     return str_replace( $bad, "", $string );
   }
 
-  $email_message .= "이름 : " . clean_string( $first_name ) . "\n\n";
   $email_message .= "이메일 : " . clean_string( $email_from ) . "\n\n";
-  $email_message .= "연락처 : " . clean_string( $telephone ) . "\n\n";
   $email_message .= "문의사항 : " . clean_string( $comments ) . "\n\n";
+  $email_message .= "문의사항 : " . clean_string( $toggleform ) . "\n\n";
 
 
   // create email headers
