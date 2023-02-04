@@ -68,7 +68,7 @@ if ( isset( $_POST[ 'email' ] ) ) {
   <!-- include your own success html here -->
 
   <script>
-    location.href = '../';
+      // location.href = '../';
   </script>
 
   <?php

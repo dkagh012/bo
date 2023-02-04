@@ -6,27 +6,16 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>폼메일보내기</title>
   <style>
-    table {
-      width: 100%;
-
+    .mainTit {
+      display: none;
     }
-
 
     .hide {
       display: none;
     }
 
-    th {
-      display: none;
-    }
 
-    .btn_submit {
-      border-radius: 3px;
-      background: #3c95d5;
-      border: 1px solid #3c95d5;
-      padding: 10px 20px;
-      font-size: 1.083em
-    }
+
 
     .mail_form {
       width: 100%;
@@ -105,11 +94,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 260px;
-      height: 150px;
-      padding: 1rem;
-      background: #f8f8f8;
-      border-radius: 1.5rem;
+      width: 400px;
+      height: 200px;
+      padding-top: 40px;
+      background: var(--colorBlack);
       z-index: 13;
       text-align: center;
     }
@@ -145,6 +133,57 @@
       position: absolute;
       bottom: -37px;
     }
+
+    .CommentTIT {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.4px;
+      color: #FFFFFF;
+      padding-bottom: 8px;
+    }
+
+    .CommentTITTE {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.4px;
+      color: #888888;
+      padding-bottom: 24px;
+    }
+
+    .CommentBTN {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.4px;
+      color: #26E2B3;
+      padding: 12px 48px;
+      background: transparent;
+      border: 1px solid var(--colorLogo);
+      cursor: pointer;
+    }
+
+    .Comment_lower {
+      padding-top: 32px;
+      text-align: center;
+    }
+
+    .Comment_lower>h1 {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      padding-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    .Comment_lower>p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      color: #888888;
+    }
   </style>
 </head>
 
@@ -154,24 +193,24 @@
       <h1>문의하기</h1>
     </div>
     <form name="contactform" method="post" action="send.php">
-      <table>
-        <tr>
-          <th scope="row">
-            <label for="email">이메일 주소</label>
-          </th>
-          <td class="email">
+      <div>
+        <div>
+          <div class="mainTit">
+            <label>이메일 주소</label>
+          </div>
+          <div class="email">
             <input name="email" type="text" class="ipt" size="30"
               style="width:100%; height:50px; background:#040B11;border:none; color:#fff;padding: 15px 12px;margin-bottom: 9px;font-size:16px;"
               maxlength="80" placeholder="답변 받으실 이메일 주소를 입력해주세요" onblur="this.placeholder='답변 받으실 이메일 주소를 입력해주세요'"
               required>
-          </td>
-        </tr>
+          </div>
+        </div>
 
-        <tr>
-          <th scope="row">
-            <label for="toggleform">유형</label>
-          </th>
-          <td class="toggleform">
+        <div>
+          <div>
+            <label class="mainTit">유형</label>
+          </div>
+          <div class="toggleform">
             <select name="toggleform" id="" style="width:100%" required>
               <option value="문의 유형" disabled selected style="display:none;">문의 유형</option>
               <option class="toggleItem" value="광고 문의">광고 문의</option>
@@ -181,33 +220,38 @@
               <option class="toggleItem" value="건의 사항">건의 사항</option>
               <option class="toggleItem" value="기타">기타</option>
             </select>
-          </td>
-        </tr>
+          </div>
+        </div>
 
-        <tr class="comments_box">
-          <th scope="row">
-            <label for="comments">문의내용</label>
-          </th>
-          <td valign="bottom" class="comments_down">
+        <div class="comments_box">
+          <div scope="row">
+            <label class="mainTit">문의내용</label>
+          </div>
+          <div valign="bottom" class="comments_down">
             <textarea onkeyup="counter(this,3000)" class="comment_text" name="comments" cols="50" rows="10"
               maxlength="3000"
               style="width:100%; height:208px; background:#040B11;border:none; color:#fff;    padding: 12px 12px 0px 12px;font-size:16px;"
               required></textarea>
             <p id="Comment_Count">0 / 3000</p>
-          </td>
-        </tr>
-
-        <div class="CommentArea hide">
-          <div class="CommentContents">
-            <!-- <h1 class="secretTitles">비밀번호를 입력해주세요</h1> -->
-            <input type="submit" value="전송하기" class="btn_submit">
           </div>
         </div>
 
-      </table>
+        <div class="CommentArea hide">
+          <div class="CommentContents">
+            <h1 class="CommentTIT">문의가 정상적으로 접수되었습니다</h1>
+            <h1 class="CommentTITTE">빠르게 답변을 드리도록 하겠습니다</h1>
+            <input type="submit" value="확인" class="CommentBTN">
+          </div>
+        </div>
+      </div>
     </form>
     <div>
-      <button type="button" class="commnet_BTN">제출하기</button>
+      <a type="button" class="commnet_BTN">제출하기</a>
+    </div>
+    <div class="Comment_lower">
+      <h1>고객센터 운영시간: 평일 9:00 - 18:00 (주말 · 공휴일 제외)</h1>
+      <p>휴일을 제외한 평일에는 빠른 답변을 드리겠습니다<br>
+        오래 기다려도 답변이 오지 않으면 스팸 메일함을 확인해주세요</p>
     </div>
   </div>
   <script>
@@ -220,6 +264,8 @@
       }
       document.getElementById("Comment_Count").innerHTML = text.value.length + "/" + limit;
     }
+
+
     function popupToggle(toggleBtn, area) {
       if (document.querySelector(`.${toggleBtn}`) !== null) {
         const BTN = document.querySelector(`.${toggleBtn}`)
