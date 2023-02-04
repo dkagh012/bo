@@ -246,7 +246,7 @@
       </div>
     </form>
     <div>
-      <a type="button" class="commnet_BTN">제출하기</a>
+      <button type="button" class="commnet_BTN">제출하기</button>
     </div>
     <div class="Comment_lower">
       <h1>고객센터 운영시간: 평일 9:00 - 18:00 (주말 · 공휴일 제외)</h1>
