@@ -12,6 +12,9 @@
     }
 
 
+    .hide {
+      display: none;
+    }
 
     th {
       display: none;
@@ -41,6 +44,49 @@
       letter-spacing: -0.6px;
       color: #FFFFFF;
     }
+
+    .toggleform {
+      height: 50px;
+      outline: none;
+      border: none;
+      background: #040B11;
+    }
+
+    .email>input::placeholder {
+      color: #fff;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .toggleform select {
+      height: 50px;
+      font-size: 16px;
+      outline: none;
+      border: none;
+      background: #040B11;
+      color: white;
+      font-weight: bold;
+      padding: 15px 12px;
+    }
+
+    .comments_box {
+      padding-top: 8px;
+      display: block;
+    }
+
+    .ipt:focus {
+      outline: none;
+      font-size: 16px;
+    }
+
+    .comment_text {
+      resize: none;
+    }
+
+    .comment_text:focus {
+      outline: none;
+      font-size: 16px;
+    }
   </style>
 </head>
 
@@ -55,9 +101,11 @@
           <th scope="row">
             <label for="email">이메일 주소</label>
           </th>
-          <td>
-            <input name="email" type="text" class="ipt" size="30" style="width:100%; height:50px;" maxlength="80"
-              placeholder="텍스트" required>
+          <td class="email">
+            <input name="email" type="text" class="ipt" size="30"
+              style="width:100%; height:50px; background:#040B11;border:none; color:#fff;padding: 15px 12px;margin-bottom: 9px;font-size:16px;"
+              maxlength="80" placeholder="답변 받으실 이메일 주소를 입력해주세요" onblur="this.placeholder='답변 받으실 이메일 주소를 입력해주세요'"
+              required>
           </td>
         </tr>
 
@@ -65,25 +113,27 @@
           <th scope="row">
             <label for="toggleform">유형</label>
           </th>
-          <td>
+          <td class="toggleform">
             <select name="toggleform" id="" style="width:100%" required>
-              <option value="광고 문의">광고 문의</option>
-              <option value="이용 문의">이용 문의</option>
-              <option value="오류 신고" selected>오류 신고</option>
-              <option value="계정 문의">계정 문의</option>
-              <option value="건의 사항">건의 사항</option>
-              <option value="기타">기타</option>
+              <option value="문의 유형" disabled selected style="display:none;">문의 유형</option>
+              <option class="toggleItem" value="광고 문의">광고 문의</option>
+              <option class="toggleItem" value="이용 문의">이용 문의</option>
+              <option class="toggleItem" value="오류 신고">오류 신고</option>
+              <option class="toggleItem" value="계정 문의">계정 문의</option>
+              <option class="toggleItem" value="건의 사항">건의 사항</option>
+              <option class="toggleItem" value="기타">기타</option>
             </select>
           </td>
         </tr>
 
-
-        <tr>
+        <tr class="comments_box">
           <th scope="row">
             <label for="comments">문의내용</label>
           </th>
-          <td height="170" valign="bottom">
-            <textarea name="comments" cols="50" rows="10" style="width:100%" required></textarea>
+          <td valign="bottom">
+            <textarea class="comment_text" name="comments" cols="50" rows="10"
+              style="width:900px; height:250px; background:#040B11;border:none; color:#fff;padding: 15px 12px;margin-bottom: 9px;font-size:16px;"
+              required></textarea>
           </td>
         </tr>
         <tr>
@@ -94,6 +144,20 @@
       </table>
     </form>
   </div>
+  <script>
+
+    const btn = document.querySelector('.btn-select');
+    const list = document.querySelector('.list-member');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('on');
+    });
+    list.addEventListener('click', (event) => {
+      if (event.target.nodeName === "BUTTON") {
+        btn.innerText = event.target.innerText;
+        btn.classList.remove('on');
+      }
+    });
+  </script>
 </body>
 
 </html>
