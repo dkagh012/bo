@@ -87,6 +87,64 @@
       outline: none;
       font-size: 16px;
     }
+
+    .CommentArea {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, .3);
+      z-index: 12;
+      line-height: 1.8em;
+    }
+
+    .CommentContents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 150px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 1.5rem;
+      z-index: 13;
+      text-align: center;
+    }
+
+    .commnet_BTN {
+      width: 100%;
+      height: 50px;
+      border: 1px solid var(--colorLogo);
+      background: #040B11;
+      color: var(--colorLogo);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 54px;
+    }
+
+    .comments_down {
+      position: relative;
+      width: 900px;
+    }
+
+    #Comment_Count {
+      width: 100%;
+      height: 42px;
+      padding-right: 12px;
+      background: #040B11;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: right;
+      color: #888888;
+      position: absolute;
+      bottom: -37px;
+    }
   </style>
 </head>
 
@@ -130,33 +188,56 @@
           <th scope="row">
             <label for="comments">문의내용</label>
           </th>
-          <td valign="bottom">
-            <textarea class="comment_text" name="comments" cols="50" rows="10"
-              style="width:900px; height:250px; background:#040B11;border:none; color:#fff;padding: 15px 12px;margin-bottom: 9px;font-size:16px;"
+          <td valign="bottom" class="comments_down">
+            <textarea onkeyup="counter(this,3000)" class="comment_text" name="comments" cols="50" rows="10"
+              maxlength="3000"
+              style="width:100%; height:208px; background:#040B11;border:none; color:#fff;    padding: 12px 12px 0px 12px;font-size:16px;"
               required></textarea>
+            <p id="Comment_Count">0 / 3000</p>
           </td>
         </tr>
-        <tr>
-          <td height="40" colspan="2" style="text-align:center">
+
+        <div class="CommentArea hide">
+          <div class="CommentContents">
+            <!-- <h1 class="secretTitles">비밀번호를 입력해주세요</h1> -->
             <input type="submit" value="전송하기" class="btn_submit">
-          </td>
-        </tr>
+          </div>
+        </div>
+
       </table>
     </form>
+    <div>
+      <button type="button" class="commnet_BTN">제출하기</button>
+    </div>
   </div>
   <script>
-
-    const btn = document.querySelector('.btn-select');
-    const list = document.querySelector('.list-member');
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('on');
-    });
-    list.addEventListener('click', (event) => {
-      if (event.target.nodeName === "BUTTON") {
-        btn.innerText = event.target.innerText;
-        btn.classList.remove('on');
+    function counter(text, length) {
+      var limit = length;
+      var str = text.value.length;
+      if (str > limit) {
+        document.getElementById("Comment_Count").innerHTML = "1500자 이상 입력 했습니다";
+        text.focus();
       }
-    });
+      document.getElementById("Comment_Count").innerHTML = text.value.length + "/" + limit;
+    }
+    function popupToggle(toggleBtn, area) {
+      if (document.querySelector(`.${toggleBtn}`) !== null) {
+        const BTN = document.querySelector(`.${toggleBtn}`)
+        const AREA = document.querySelector(`.${area}`)
+
+        BTN.addEventListener('click', () => toggleClassList(AREA, 'hide'));
+
+
+        AREA.addEventListener('click', (e) => {
+          if (e.target.className === AREA.className) {
+            toggleClassList(AREA, 'hide');
+          };
+        });
+      };
+    }
+
+    popupToggle('commnet_BTN', 'CommentArea');
+
   </script>
 </body>
 

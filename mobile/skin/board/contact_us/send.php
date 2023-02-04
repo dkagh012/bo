@@ -68,7 +68,6 @@ if ( isset( $_POST[ 'email' ] ) ) {
   <!-- include your own success html here -->
 
   <script>
-    alert("메일이 발송되었습니다.\n빠른 시일안에 답변드리겠습니다.");
     location.href = '../';
   </script>
 
