@@ -63,13 +63,14 @@
       display: block;
     }
 
-    .ipt:focus {
+    .inner_BTN:focus {
       outline: none;
       font-size: 16px;
     }
 
     .comment_text {
       resize: none;
+      background: #040B11;
     }
 
     .comment_text:focus {
@@ -89,6 +90,17 @@
       line-height: 1.8em;
     }
 
+    .ipt {
+      width: 100%;
+      height: 50px;
+      background: #040B11;
+      border: none;
+      color: #fff;
+      padding: 15px 12px;
+      margin-bottom: 9px;
+      font-size: 16px;
+    }
+
     .CommentContents {
       position: fixed;
       top: 50%;
@@ -104,10 +116,24 @@
 
     .commnet_BTN {
       width: 100%;
+      display: none;
       height: 50px;
       border: 1px solid var(--colorLogo);
       background: #040B11;
       color: var(--colorLogo);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 54px;
+    }
+
+    .notcommnet_BTN {
+      display: block;
+      width: 100%;
+      height: 50px;
+      border: 0;
+      background: #040B11;
+      color: var(--colorGray);
       font-weight: 700;
       font-size: 16px;
       line-height: 20px;
@@ -206,6 +232,10 @@
       color: var(--colorLogo);
       line-height: 18px;
     }
+
+    .Usertext_BOX {
+      display: none;
+    }
   </style>
 </head>
 
@@ -222,10 +252,8 @@
               <label>이메일 주소</label>
             </div>
             <div class="email">
-              <input name="email" type="email" class="ipt" size="30" id="email"
-                style="width:100%; height:50px; background:#040B11;border:none; color:#fff;padding: 15px 12px;margin-bottom: 9px;font-size:16px;"
-                maxlength="80" placeholder="답변 받으실 이메일 주소를 입력해주세요" onblur="this.placeholder='답변 받으실 이메일 주소를 입력해주세요'"
-                required>
+              <input name="email" type="email" class="ipt" size="30" id="email" maxlength="80"
+                placeholder="답변 받으실 이메일 주소를 입력해주세요" onblur="this.placeholder='답변 받으실 이메일 주소를 입력해주세요'" required>
               <!-- <button onclick="check_email()">확인</button> -->
             </div>
             <div class="Cotact_desc email_form">
@@ -238,7 +266,7 @@
               <label class="mainTit">유형</label>
             </div>
             <div class="toggleform">
-              <select name="toggleform" id="" style="width:100%" required>
+              <select name="toggleform" id="Mail_Select" style="width:100%" onchange="toggle(this.value)" required>
                 <option value="문의 유형" disabled selected style="display:none;">문의 유형</option>
                 <option class="toggleItem" value="광고 문의">광고 문의</option>
                 <option class="toggleItem" value="이용 문의">이용 문의</option>
@@ -249,53 +277,82 @@
               </select>
             </div>
           </div>
-
-          <div class="comments_box">
-            <div scope="row">
-              <label class="mainTit">문의내용</label>
+          <div class="Usertext_BOX">
+            <div class="comments_box">
+              <div scope="row">
+                <label class="mainTit">문의내용</label>
+              </div>
+              <div valign="bottom" class="comments_down">
+                <textarea onkeyup="counter(this,3000)" class="comment_text" name="comments" cols="50" rows="10"
+                  maxlength="3000" id="comment_text" class=""
+                  style="width:100%; height:208px; background:#040B11;border:none; color:#fff;    padding: 12px 12px 0px 12px;font-size:16px;"
+                  required></textarea>
+                <p id="Comment_Count">0 / 3000</p>
+              </div>
+              <div class="Cotact_desc desc_padding">
+                <h1>내용 파악을 위해 30자 이상을 작성해 주세요</h1>
+              </div>
             </div>
-            <div valign="bottom" class="comments_down">
-              <textarea onkeyup="counter(this,3000)" class="comment_text" name="comments" cols="50" rows="10"
-                maxlength="3000" id="comment_text"
-                style="width:100%; height:208px; background:#040B11;border:none; color:#fff;    padding: 12px 12px 0px 12px;font-size:16px;"
-                required></textarea>
-              <p id="Comment_Count">0 / 3000</p>
+            <div>
+              <button type="button" class="commnet_BTN">제출하기</button>
             </div>
-            <div class="Cotact_desc desc_padding">
-              <h1>내용 파악을 위해 30자 이상을 작성해 주세요</h1>
+            <div>
+              <input type="button" value="확인" class="notcommnet_BTN">
+            </div>
+            <div class="Comment_lower">
+              <h1>고객센터 운영시간: 평일 9:00 - 18:00 (주말 · 공휴일 제외)</h1>
+              <p>휴일을 제외한 평일에는 빠른 답변을 드리겠습니다<br>
+                오래 기다려도 답변이 오지 않으면 스팸 메일함을 확인해주세요</p>
             </div>
           </div>
-          <div>
-            <input type="submit" value="확인" class="commnet_BTN">
+          <div class="CommentArea hide">
+            <div class="CommentContents">
+              <h1 class="CommentTIT">문의가 정상적으로 접수되었습니다</h1>
+              <h1 class="CommentTITTE">빠르게 답변을 드리도록 하겠습니다</h1>
+              <input type="submit" value="확인" class="CommentBTN">
+            </div>
           </div>
-
-        </div>
       </form>
-
-      <div class="CommentArea hide">
-        <div class="CommentContents">
-          <h1 class="CommentTIT">문의가 정상적으로 접수되었습니다</h1>
-          <h1 class="CommentTITTE">빠르게 답변을 드리도록 하겠습니다</h1>
-          <button type="button" class="CommentBTN">제출하기</button>
-        </div>
-      </div>
-      <div class="Comment_lower">
-        <h1>고객센터 운영시간: 평일 9:00 - 18:00 (주말 · 공휴일 제외)</h1>
-        <p>휴일을 제외한 평일에는 빠른 답변을 드리겠습니다<br>
-          오래 기다려도 답변이 오지 않으면 스팸 메일함을 확인해주세요</p>
-      </div>
     </div>
   </div>
+
+
   <script>
+    // function chageLangSelect() {
+    //   var langSelect = document.getElementById("Mail_Select");
+    //   const Comment_lower = document.querySelector('.Comment_lower');
+    //   // select element에서 선택된 option의 value가 저장된다.  
+    //   var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+    //   // select element에서 선택된 option의 text가 저장된다.  
+    //   var selectText = langSelect.options[langSelect.selectedIndex].text;
+    //   if (langSelect.options[langSelect.selectedIndex].value !== "") {
+    //     Comment_lower.style.display = "x";
+    //   }
+    // }
+    function toggle(value) {
+      const UserTXT = document.querySelector('.Usertext_BOX');
+      if (value !== "") {
+        UserTXT.style.display = "block";
+      }
+    }
+
+
     let textarea = document.getElementById('comment_text');
 
-
+    // 텍스트
     textarea.addEventListener('keypress', () => {
       const textarea_Box = document.querySelector('.desc_padding');
+      const comments = document.querySelector('.commnet_BTN');
+      const notcomments = document.querySelector('.notcommnet_BTN');
       if (textarea.value.length <= 30) {
         textarea_Box.style.display = 'block';
+        comments.style.display = 'none';
+        notcomments.style.display = 'block';
       } else if (textarea.value.length > 30) {
         textarea_Box.style.display = 'none';
+        comments.style.display = 'block';
+        notcomments.style.display = 'none';
       }
     })
 
@@ -304,14 +361,20 @@
     emailtest.addEventListener('keypress', () => {
       let input = document.getElementById("email").value;
       const TE = document.querySelector('.email_form');
+      const comments = document.querySelector('.commnet_BTN');
+      const notcomments = document.querySelector('.notcommnet_BTN');
       let email_format = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-      if (email_format.test(input))
+      if (email_format.test(input)) {
+        // 조건이 맞하하면
         TE.style.display = 'none';
+
+      }
       else {
+        // 아니라 하면
         TE.style.display = 'block';
+
       }
     })
-
 
     // 텍스트 글자 갯수
     function counter(text, length) {
