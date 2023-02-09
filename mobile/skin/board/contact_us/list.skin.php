@@ -345,14 +345,10 @@
       const textarea_Box = document.querySelector('.desc_padding');
       const comments = document.querySelector('.commnet_BTN');
       const notcomments = document.querySelector('.notcommnet_BTN');
-      if (textarea.value.length <= 30) {
+      if (textarea.value.length < 28) {
         textarea_Box.style.display = 'block';
-        comments.style.display = 'none';
-        notcomments.style.display = 'block';
-      } else if (textarea.value.length > 30) {
+      } else if (textarea.value.length > 28) {
         textarea_Box.style.display = 'none';
-        comments.style.display = 'block';
-        notcomments.style.display = 'none';
       }
     })
 
@@ -367,12 +363,14 @@
       if (email_format.test(input)) {
         // 조건이 맞하하면
         TE.style.display = 'none';
-
+        comments.style.display = 'block';
+        notcomments.style.display = 'none';
       }
       else {
         // 아니라 하면
         TE.style.display = 'block';
-
+        comments.style.display = 'none';
+        notcomments.style.display = 'block';
       }
     })
 

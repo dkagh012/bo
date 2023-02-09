@@ -19,7 +19,7 @@ $list_count = ( is_array( $list ) && $list ) ? count( $list ) : 0;
 ?>
 
 <div class="xns_title xns_background">
-  <h2>새소식</h2>
+  <h2>팬 아트</h2>
   <a href="<?php echo get_pretty_url( $bo_table ); ?>" class="lt_more">
     <span class="sound_only">
       <?php echo $bo_subject ?>

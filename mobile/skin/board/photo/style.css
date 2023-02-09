@@ -301,3 +301,20 @@ a.titles_img {
   color: white;
   display: none;
 }
+
+.con>p:nth-child(1)::after {
+  content: "]";
+}
+
+.con>p:nth-child(1)::before {
+  content: "[";
+}
+
+.con>p:nth-child(1) {
+  letter-spacing: -5px;
+}
+
+
+.subject {
+  padding-left: 15px;
+}

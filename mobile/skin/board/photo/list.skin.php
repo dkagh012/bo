@@ -78,8 +78,8 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 						<div class="con_title">
 							<div class="con">
 								<?php if ( $is_category && $list[ $i ][ 'ca_name' ] ) { ?>
-									<p class="bo_cate_link">[
-										<?php echo $list[ $i ][ 'ca_name' ] ?>]
+									<p class="bo_cate_link">
+										<?php echo $list[ $i ][ 'ca_name' ] ?>
 									</p>
 								<?php } ?>
 								<p class="subject">
@@ -100,8 +100,8 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 
 						</div>
 						<!--<a href="<?php echo $list[ $i ][ 'href' ] ?>" class="btn_detail">
-																																								<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
-																																							</a>-->
+																																											<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
+																																										</a>-->
 
 
 

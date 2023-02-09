@@ -30,55 +30,110 @@
 html {
     overflow-y: scroll;
     height: 100%;
-    min-width: 320px
+    min-width: 320px;
+    font-size: 10px;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-size: 0.813em;
     background: #181822;
     height: 100%;
     font-weight: 100;
+    font-size: 16px;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-form,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
 fieldset,
-img {
-    margin: 0;
-    padding: 0;
-    border: 0
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: 1em
-}
-
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
 article,
 aside,
+canvas,
 details,
-figcaption,
+embed,
 figure,
+figcaption,
 footer,
 header,
 hgroup,
 menu,
 nav,
-section {
-    display: block
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1em;
+    font: inherit;
+    color: inherit;
+    vertical-align: baseline;
 }
 
 legend {
@@ -1765,21 +1820,24 @@ textarea.required {
     background-position: right top !important;
 }
 
-/* 로그인 버튼 */
-.head_login {
+.pc_view .header_login {
     background: var(--colorLogo);
     border-radius: 4px;
-    font-size: 16px;
-    text-align: center;
-    color: black;
-    padding: 13px 17.5px;
-    letter-spacing: 0px;
     cursor: pointer;
-
 }
 
 
 
+.pc_view .header_login>p {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+
+    color: #000000;
+
+}
 
 /* 테이블 항목별 정의 */
 .td_board {

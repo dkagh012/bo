@@ -26,7 +26,16 @@ add_javascript( '<script src="' . G5_JS_URL . '/jquery.bxslider.js"></script>', 
 <div data-aos="fade-up">
     <div class="latest_img">
         <?php
-        echo latest( 'theme/index_xns_gnuboard_latest_gallery_thumbnail', 'ani', 6, 23 );
+        echo latest( 'theme/index_xns_gnuboard_latest_gallery_thumbnail', 'ani', 3, 23 );
+
+        ?>
+    </div>
+</div>
+
+<div data-aos="fade-up">
+    <div class="latest_img">
+        <?php
+        echo latest( 'theme/index_art', 'ART', 6, 23 );
 
         ?>
     </div>
