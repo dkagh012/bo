@@ -15,9 +15,13 @@ html.with-featherlight {
 	display: none;
 
 	/* dimensions: spanning the background from edge to edge */
-	position:fixed;
-	top: 0; right: 0; bottom: 0; left: 0;
-	z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2147483647;
+	/* z-index needs to be >= elements on the site. */
 
 	/* position: centering content */
 	text-align: center;
@@ -99,7 +103,8 @@ html.with-featherlight {
 	/* styling */
 	cursor: pointer;
 	text-align: center;
-	background: #fff; /* Set the background in case it overlaps the content */
+	background: #fff;
+	/* Set the background in case it overlaps the content */
 	background: rgba(255, 255, 255, 0.3);
 	color: #000;
 	border: none;
@@ -130,11 +135,14 @@ html.with-featherlight {
 	border: none;
 }
 
-.featherlight * { /* See https://github.com/noelboss/featherlight/issues/42 */
+.featherlight * {
+	/* See https://github.com/noelboss/featherlight/issues/42 */
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+
 
 /* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
@@ -151,7 +159,7 @@ html.with-featherlight {
 
 /* hide non featherlight items when printing */
 @media print {
-	html.with-featherlight > * > :not(.featherlight) {
+	html.with-featherlight>*> :not(.featherlight) {
 		display: none;
 	}
 }

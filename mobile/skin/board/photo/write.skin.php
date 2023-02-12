@@ -8,7 +8,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_THEME_CSS_URL.'/board.css">', 
 
 <section id="bo_w">
 <h2 class="sound_only"><?php echo $g5['title'] ?></h2>
-
+<!-- 테스트3 -->
 <!-- 게시물 작성/수정 시작 { -->
 <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:<?php echo $width; ?>">
 <input type="hidden" name="uid" value="<?php echo get_uniqid(); ?>">

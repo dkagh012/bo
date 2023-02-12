@@ -9,9 +9,7 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 ?>
 
 <link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL; ?>/jquery.wookmark.css">
-<style>
 
-</style>
 
 <!-- 게시판 목록 시작 { -->
 <div id="bo_list">
@@ -44,7 +42,7 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 
 
 		<?php
-		echo latest( 'theme/photo_basic', 'ani', 3, 23 );
+		echo latest( 'theme/photo_basic', 'free', 3, 23 );
 		?>
 
 
@@ -54,7 +52,7 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 			</h2>
 
 			<ul class="tiles" id="ajax_data">
-				<?php for ( $i = 0; $i < count( $list ); $i++ ) { ?>
+				<?php for ( $i = 3; $i < count( $list ); $i++ ) { ?>
 					<li class="titles_list">
 						<a class="titles_img" href="<?php echo $list[ $i ][ 'href' ] ?>">
 							<?php
@@ -100,8 +98,8 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 
 						</div>
 						<!--<a href="<?php echo $list[ $i ][ 'href' ] ?>" class="btn_detail">
-																																											<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
-																																										</a>-->
+																																																<div class="detail"><i class="xi-library-books-o xi-x xi-4x"></i><br>DETAIL VIEW.</div>
+																																															</a>-->
 
 
 
@@ -123,7 +121,7 @@ add_stylesheet( '<link rel="stylesheet" href="' . G5_THEME_CSS_URL . '/board.css
 						<?php if ( $member[ 'mb_level' ] == 10 ) { ?>
 							<?php if ( $write_href ) { ?>
 								<li>
-									<a href="<?php echo $write_href ?>" class="btn btn_act" title="글쓰기">
+									<a href="<?php echo $write_href ?>" class="photo_input" title="글쓰기">
 										<i class="xi-pen-o xi-1x"></i></a>
 								</li>
 							<?php } ?>

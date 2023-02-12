@@ -380,6 +380,7 @@ ul {
 #gnb_1dul {
     width: 60%;
     display: flex;
+    font-weight: 500;
 }
 
 #gnb_1dul li:nth-child(1) {

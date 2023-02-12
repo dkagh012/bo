@@ -245,7 +245,9 @@ add_stylesheet( '<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.c
         <?php }
         else { ?>
 
-          <li><a href="<?php echo G5_BBS_URL ?>/login.php" class="latest_list_link">비회원</a></li>
+          <li class="membershipBtn latest_list_link ">
+            <p>글쓰기</p>
+          </li>
         <?php } ?>
       </div>
     </ul>
@@ -261,6 +263,12 @@ add_stylesheet( '<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.c
 <?php echo $write_pages; ?>
 
 <script>
+
+  const membershipBtn = document.querySelector('.membershipBtn');
+
+  membershipBtn.addEventListener('click', () => {
+    LoginArea.classList.toggle('hide');
+  })
 
   var page_on = $("#container").find(".pg_current");
   var page_check = $(".pg_current").text();
@@ -300,6 +308,8 @@ add_stylesheet( '<link rel="stylesheet" href="' . $board_skin_url . '/bo_style.c
       }, 500)
     }
   })
+
+
 
 
 </script>
