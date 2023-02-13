@@ -183,8 +183,6 @@ if ( ! defined( '_GNUBOARD_' ) )
         if (comment_id) {
           if (work == 'c')
             el_id = 'reply_' + comment_id;
-          else
-            el_id = 'edit_' + comment_id;
         }
         else
           el_id = 'bo_vc_w';
@@ -193,19 +191,21 @@ if ( ! defined( '_GNUBOARD_' ) )
           if (save_before) {
             document.getElementById(save_before).style.display = 'none';
           }
-
+          const News_info = document.querySelector('.News_info');
           document.getElementById(el_id).style.display = '';
           document.getElementById(el_id).appendChild(respond);
+          News_info.classList.add('News_answer');
           //입력값 초기화
+          document.getElementById('wr_content').value = '';
           document.getElementById('wr_content').value = '';
 
           document.getElementById('comment_id').value = comment_id;
           document.getElementById('w').value = work;
 
           if (save_before)
-            // $("#captcha_reload").trigger("click");
+            $("#captcha_reload").trigger("click");
 
-            save_before = el_id;
+          save_before = el_id;
         }
       }
 
@@ -226,7 +226,7 @@ if ( ! defined( '_GNUBOARD_' ) )
             }
           );
         });
-                                                                                                                                                                                          <?php } ?>
+                                                                                                                                                                                                                                        <?php } ?>
     </script>
     <!-- } 댓글 쓰기 끝 -->
   <?php }
@@ -240,12 +240,12 @@ else { ?>
 
   <!-- 댓글 시작 { -->
   <section class="NewsComment" id="bo_vc">
-    <h2>댓글목록</h2>
     <?php
     $cmt_amt = count( $list );
     for ( $i = 0; $i < $cmt_amt; $i++ ) {
       $comment_id = $list[ $i ][ 'wr_id' ];
       $cmt_depth  = strlen( $list[ $i ][ 'wr_comment_reply' ] ) * 20;
+      $cmt_answer = strlen( $list[ $i ][ 'wr_comment_reply' ] ) * 40;
       $comment    = $list[ $i ][ 'content' ];
       /*
       if (strstr($list[$i]['wr_option'], "secret")) {
@@ -302,10 +302,6 @@ else { ?>
                 }
                 ?>
               <?php } ?>
-
-              <span id="edit_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 수정 -->
-              <span id="reply_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 답변 -->
-
               <input type="hidden" value="<?php echo strstr( $list[ $i ][ 'wr_option' ], "secret" ) ?>"
                 id="secret_comment_<?php echo $comment_id ?>">
               <textarea id="save_comment_<?php echo $comment_id ?>"
@@ -342,6 +338,7 @@ else { ?>
           <?php } ?>
         </div>
       </article>
+      <div id="reply_<?php echo $comment_id ?>" class="bo_vc_w" <?php if ( $cmt_answer ) { ?>style="margin-left:<?php echo $cmt_answer; ?>px;" <?php } ?>></div><!-- 답변 -->
     <?php } ?>
     <?php if ( $i == 0 ) { //댓글이 없다면 ?>
       <p id="bo_vc_empty">등록된 댓글이 없습니다.</p>

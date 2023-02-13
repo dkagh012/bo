@@ -7,7 +7,8 @@
 .News_comments {
   max-width: 1400px;
   width: 100%;
-  margin: 0 auto;
+
+  margin: 124px auto 0px auto;
 }
 
 .News_Ca {
@@ -94,6 +95,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .News_content {
@@ -109,7 +111,6 @@
   letter-spacing: -0.24px;
   color: #FFFFFF;
   outline: none;
-  margin-top: 124px;
   overflow-y: scroll !important;
 
 }
@@ -194,4 +195,12 @@
 
 #bo_v {
   /* background: white; */
+}
+
+.News_answer {
+  margin-bottom: 8px;
+}
+
+.News_answer .News_content {
+  margin: 0;
 }

@@ -244,7 +244,7 @@ if ( ! defined( '_GNUBOARD_' ) )
           }
         );
       });
-                        <?php } ?>
+                              <?php } ?>
   </script>
   <!-- } 댓글 쓰기 끝 -->
 <?php }
@@ -322,8 +322,6 @@ else { ?>
             ?>
           <?php } ?>
 
-          <span id="edit_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 수정 -->
-          <span id="reply_<?php echo $comment_id ?>" class="bo_vc_w"></span><!-- 답변 -->
 
           <input type="hidden" value="<?php echo strstr( $list[ $i ][ 'wr_option' ], "secret" ) ?>"
             id="secret_comment_<?php echo $comment_id ?>">
@@ -351,6 +349,10 @@ else { ?>
               <?php } ?>
             </ul>
             <div style="height:5px"></div>
+            <?php if ( $list[ $i ][ 'is_reply' ] ) { ?>
+              <li><a href="<?php echo $c_reply_href; ?>"
+                  onclick="comment_box('<?php echo $comment_id ?>', 'c'); return false;">답변</a></li>
+            <?php } ?>
             <ul class="bo_vc_act">
               <li>
                 <a class="btn_b03"
@@ -375,20 +377,7 @@ else { ?>
         <?php } ?>
 
         <script>
-          $(function () {
-            // 댓글 옵션창 열기
-            $(".btn_cm_opt").on("click", function () {
-              $(this).parent("div").children(".bo_vc_act").show();
-            });
 
-            // 댓글 옵션창 닫기
-            $(document).mouseup(function (e) {
-              var container = $(".bo_vc_act");
-              if (container.has(e.target).length === 0)
-                container.hide();
-            });
-
-          });
         </script>
 
     </article>
