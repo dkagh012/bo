@@ -226,7 +226,7 @@ if ( ! defined( '_GNUBOARD_' ) )
             }
           );
         });
-                                                                                                                                                                                                                                        <?php } ?>
+                                                                                                                                                                                                                                            <?php } ?>
     </script>
     <!-- } 댓글 쓰기 끝 -->
   <?php }
